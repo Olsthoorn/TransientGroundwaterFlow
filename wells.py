@@ -1,5 +1,5 @@
-
 import pdb
+import numpy as np
 
 from scipy.special import expi
 def W(u): return  -expi(-u)  # Theis
@@ -23,7 +23,7 @@ def wh(u, rho):
     except:
         print("u and rho must be scalars.")
         raise ValueError()
-        
+
     LOGINF = 2
     y = np.logspace(np.log10(u), LOGINF, 1000)
     ym = 0.5 * (y[:-1]+  y[1:])
@@ -34,12 +34,12 @@ def wh(u, rho):
 
 def Wh(U,Rho):
     """Returns multiple values of Hantush's well function.
-    
+
     Parameters:
     -----------
     U : ndarray with values of u
     Rho : ndarray with values of rho
-    
+
     Returns:
     --------
     well function values for all combinations of U and Rho in an ndarray of shape (Nrho, Nu)
