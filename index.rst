@@ -16,7 +16,7 @@ Welcome to Transient Groundwater Flow's documentation!
    ReversibleStorage.ipynb
    ElasticStorage.ipynb
    OneDimensionalTransientFlow.ipynb
-   SuddenHeadChanges.ipynb
+   NonFluctuatingInteractionWithSurfaceWater.ipynb
    TransientFlowToAWell.ipynb
    TheisWellFunction.ipynb
    WellInLeakyAquifer.ipynb
