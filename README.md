@@ -28,14 +28,18 @@ that is, when you cloned the course, you have them in the directory /docs of you
 Also note that the pictures in read the docs are in the folder /docs/pictures.
 
 You also find the folders
+
 Powerpoint
-    with the powerpoint presentation used in class
+>with the powerpoint presentation used in class
+
 OldExams
-    with the old exames since 2006, both with and without answers
+>with the old exames since 2006, both with and without answers
+
 exercies
-    we do in class
+>we do in class
+
 Assignment
-    the assignment for this year
+>the assignment for this year
 
 
 Theo Olsthoorn, 08-Jan-2018
