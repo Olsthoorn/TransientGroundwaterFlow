@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to TransientGroundwaterFlowIHEDelft’s documentation! &mdash; TransientGroundwaterFlowIHEDelft 2022 01 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Nomenclature" href="TransientGroundwater.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> TransientGroundwaterFlowIHEDelft
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html">1. Nomenclature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#introduction">2. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#introduction-to-transient-phenomena-in-groundwater">3. Introduction to transient phenomena in groundwater</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#irreversible-transient-phenomena">4. Irreversible transient phenomena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#reversible-groundwater-storage">5. Reversible groundwater storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#one-dimensional-transient-groundwater-flow">6. One-dimensional transient groundwater flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#transient-flow-to-wells">7. Transient flow to wells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#convolution">8. Convolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#laplace-solutions-illustration-not-for-exam">9. Laplace solutions (illustration, not for exam)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#bibliography">10. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exams_from_2006.html">11. Previous exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exams_from_2006%2Banswers.html">12. Previous exams with answers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">TransientGroundwaterFlowIHEDelft</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Welcome to TransientGroundwaterFlowIHEDelft’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>For old exams (without answers) checkout <a class="reference internal" href="exams_from_2006.html"><span class="doc">Previous exams</span></a>.</p>
+<p>For old exams (with answers) checkout <a class="reference internal" href="exams_from_2006%2Banswers.html"><span class="doc">Previous exams with answers</span></a>.</p>
+<section id="welcome-to-transientgroundwaterflowihedelft-s-documentation">
+<h1>Welcome to TransientGroundwaterFlowIHEDelft’s documentation!<a class="headerlink" href="#welcome-to-transientgroundwaterflowihedelft-s-documentation" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html">1. Nomenclature</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#general">1.1. General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#hydraulic-and-mechanical-properties">1.2. Hydraulic and mechanical properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#heat-properties-and-flow">1.3. Heat properties and flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#aquifer-system">1.4. Aquifer system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#groundwater-waves">1.5. Groundwater waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#physics-math-and-mechanics">1.6. Physics, math and mechanics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#introduction">2. Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#objectives-of-the-course">2.1. Objectives of the course</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#note-with-respect-to-the-exercises">2.2. Note with respect to the exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#introduction-to-transient-phenomena-in-groundwater">3. Introduction to transient phenomena in groundwater</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#irreversible-transient-phenomena">4. Irreversible transient phenomena</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#consolidation">4.1. Consolidation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#liquefaction">4.2. Liquefaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#intrusion-of-salt-water">4.3. Intrusion of salt water</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#questions">4.4. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#reversible-groundwater-storage">5. Reversible groundwater storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#phreatic-storage-water-table-storage-specific-yield-sy">5.1. Phreatic storage (water table storage, specific yield, Sy)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#phreatic-responses">5.1.1. Phreatic responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-1">5.1.2. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#elastic-storage">5.2. Elastic Storage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#introduction-1">5.2.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#loading-efficiency">5.2.2. Loading efficiency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#barometer-efficiency">5.2.3. Barometer efficiency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#how-much-are-the-loading-efficiency-and-the-barometer-efficiency-when-expressed-in-the-properties-of-the-water-and-the-porous-medium">5.2.4. How much are the loading efficiency and the barometer efficiency when expressed in the properties of the water and the porous medium ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#specific-elastic-storage-coefficient">5.2.5. Specific (elastic) storage coefficient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#application-not-for-exam">5.2.6. Application (not for exam)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-2">5.2.7. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#earth-tides-not-for-exam">5.3. Earth tides (not for exam)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#one-dimensional-transient-groundwater-flow">6. One-dimensional transient groundwater flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#scope">6.1. Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#governing-equations">6.2. Governing equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#sinusoidal-fluctuations-of-the-groundwater-head-and-flows">6.3. Sinusoidal fluctuations of the groundwater head and flows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#groundwater-fluctuations-due-to-sinusoidal-tides">6.3.1. Groundwater fluctuations due to sinusoidal tides</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#what-is-the-velocity-of-the-wave-or-what-is-the-delay-of-the-wave-at-any-distance-x-from-the-sea-or-river">6.3.1.1. What is the velocity of the wave, or what is the delay of the wave at any distance <span class="math notranslate nohighlight">\(x\)</span> from the sea or river?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#how-much-is-the-wavelength-in-the-ground">6.3.1.2. How much is the wavelength in the ground?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#using-characteristic-time-and-length">6.3.2. Using characteristic time and length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#fluctuations-of-temperature-in-the-subsurface">6.3.3. Fluctuations of temperature in the subsurface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#concluding-remarks">6.3.4. Concluding remarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-3">6.3.5. Questions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#heat-flow">6.3.5.1. Heat flow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#non-fluctuating-interaction-with-surface-water">6.4. Non-fluctuating interaction with surface water</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#basins-of-half-infinite-lateral-extent">6.4.1. Basins of half-infinite lateral extent</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#exercise">6.4.1.1. Exercise:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-4">6.4.2. Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#higher-order-solutions-not-for-exam">6.4.3. Higher-order solutions (not for exam)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#example">6.4.3.1. Example:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-5">6.4.4. Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#superposition-in-time-half-infinite-aquifer">6.4.5. Superposition in time, half-infinite aquifer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#example-1">6.4.5.1. Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#groundwater-basins-as-land-strips-of-limited-width-between-straight-head-boundaries">6.5. Groundwater basins as land strips of limited width between straight head boundaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#introduction-2">6.5.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#water-level-at-the-left-hand-side-suddenly-rises-over-a-height-of-a-m-while-the-water-level-at-the-right-hand-side-remains-at-zero">6.5.2. Water level at the left-hand side suddenly rises over a height of <span class="math notranslate nohighlight">\(A\)</span> m, while the water level at the right-hand side remains at zero</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#shifting-the-zero-point-of-the-x-axis">6.5.2.1. Shifting the zero point of the <span class="math notranslate nohighlight">\(x\)</span>-axis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#arbitrary-non-symmetrical-case">6.5.3. Arbitrary non-symmetrical case</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#symmetrical-case-a-b">6.5.4. Symmetrical case, <span class="math notranslate nohighlight">\(A=B\)</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#another-perspective-drainage-of-a-basin-in-which-the-head-is-initially-at-distance-a-above-the-fixed-heads-at-either-side-of-the-strip">6.5.4.1. Another perspective, drainage of a basin in which the head is initially at distance A above the fixed heads at either side of the strip</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-6">6.5.5. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#symmetrical-drainage-from-a-land-strip-bounded-by-straight-head-boundaries-characteristic-time-of-flow-basins">6.6. Symmetrical drainage from a land strip bounded by straight head boundaries (characteristic time of flow basins)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#analytical-solution">6.6.1. Analytical solution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#exercise-1">6.6.1.1. Exercise:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#long-term-drainage-behavior-characteristic-drainage-time">6.6.2. Long-term drainage behavior, characteristic drainage time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-7">6.6.3. Questions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#transient-flow-to-wells">7. Transient flow to wells</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#introduction-3">7.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#wells-and-well-functions-overview">7.2. Wells and well functions overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#general-relation-between-the-well-induced-head-change-in-a-water-table-and-confined-aquifer-and-the-relation-between-the-different-analytical-solutions-for-drawdown-by-a-fully-penetrating-pumping-well">7.3. General relation between the well-induced head change in a water-table and confined aquifer and the relation between the different analytical solutions for drawdown by a fully penetrating pumping well</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#theis-and-hantush-wells-in-an-infinite-aquifer-with-constant-transmissivity-and-storativity-the-governing-partial-differential-equation">7.4. Theis and Hantush wells in an infinite aquifer with constant transmissivity and storativity; the governing partial differential equation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#introduction-4">7.4.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#the-governing-partial-differential-equation">7.4.2. The governing partial differential equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#the-theis-and-hantush-well-functions">7.4.3. The Theis and Hantush well functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#implementation-of-the-theis-and-hantush-well-function-in-python">7.4.4. Implementation of the Theis and Hantush well function in Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#theis-well-function-exponential-integral">7.4.4.1. Theis’ well function (exponential integral)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#hantush-well-function">7.4.4.2. Hantush well function</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#type-curves-for-the-theis-and-hantush-well-functions">7.4.5. Type-curves for the Theis and Hantush well functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#example-application">7.4.5.1. Example application</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#unconfined-flow-approximation-by-theis">7.4.5.2. Unconfined flow approximation by Theis:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#inflection-points-in-the-graphs-of-the-hantush-well-functions-on-half-logarithmic-scales-well-functions-versus-log-of-1-u">7.4.5.3. Inflection points in the graphs of the Hantush well functions on half-logarithmic scales (well functions versus log of <span class="math notranslate nohighlight">\(1/u\)</span>)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#power-approximation-of-theis-well-function">7.4.6. Power approximation of Theis well function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#radius-of-influence">7.4.7. Radius of influence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#graphical-illustration-of-the-radius-of-influence">7.4.8. Graphical illustration of the radius of influence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#relation-between-the-transient-theis-drawdown-and-the-well-known-thiem-solution-for-the-drawdown-in-the-steady-state-situation-time-to-reaching-steady-state">7.4.9. Relation between the transient Theis drawdown and the well-known Thiem solution for the drawdown in the steady-state situation. Time to reaching steady state.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#flow-at-distance-r-from-the-well-in-the-theis-and-hantush-situations">7.4.10. Flow at distance <span class="math notranslate nohighlight">\(r\)</span> from the well in the Theis and Hantush situations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#theis-situation">7.4.10.1. Theis situation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#hantush-situation">7.4.10.2. Hantush situation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#pumping-test-analyses">7.5. Pumping-test analyses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#introduction-5">7.5.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#analysis-of-the-pumping-test-in-the-theis-situation-using-the-logarithmic-approximation-of-the-theis-well-function">7.5.2. Analysis of the pumping test in the Theis situation using the logarithmic approximation of the Theis well function</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#example-2">7.5.2.1. Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#theis-and-hantush-classic-pumping-test-analysis">7.5.3. Theis and Hantush classic pumping-test analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#can-we-improve-the-accuracy">7.5.3.1. Can we improve the accuracy?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#exercises">7.5.4. Exercises</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#superposition-in-time">7.5.5. Superposition in time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#superposition-in-space">7.5.6. Superposition in space</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#exercise-2">7.5.6.1. Exercise:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-8">7.5.7. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#partial-penetration-of-well-screens">7.6. Partial penetration of well screens</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#huismans-method">7.6.1. Huisman’s method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#hantushs-solution-for-partial-penetrating-screens">7.6.2. Hantush’s solution for partial penetrating screens</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#example-3">7.6.3. Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="TransientGroundwater.html#python-implementation-of-partial-penetration">7.6.3.1. Python implementation of partial penetration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-9">7.6.4. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#delayed-yield-delayed-water-table-response">7.7. Delayed yield (delayed water-table response)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#introduction-6">7.7.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#water-table-aquifer">7.7.2. Water-table aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#generalization-to-semi-confined-aquifers">7.7.3. Generalization to semi-confined aquifers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#the-two-theis-bounding-curves">7.7.4. The two Theis bounding curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#influence-of-partial-penetration-of-the-well-screen">7.7.5. Influence of partial penetration of the well screen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#questions-10">7.7.6. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#large-diameter-wells-not-for-the-exam">7.8. Large-diameter wells (not for the exam)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#convolution">8. Convolution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#what-convolution-is-and-how-it-works">8.1. What convolution is and how it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#examples">8.2. Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#arbitrarily-fluctuating-river-stage">8.2.1. Arbitrarily fluctuating river stage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#impulse-response-block-response-and-step-response-comparison">8.2.2. Impulse response, block response, and step response comparison</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#arbitrarily-fluctuating-extraction-of-multiple-theis-wells">8.2.3. Arbitrarily fluctuating extraction of multiple Theis wells</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TransientGroundwater.html#convolution-using-recharge-as-input-time-series-to-simulate-varying-groundwater-levels">8.2.4. Convolution using recharge as input time series to simulate varying groundwater levels</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#questions-11">8.3. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#laplace-solutions-illustration-not-for-exam">9. Laplace solutions (illustration, not for exam)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#sudden-head-rise-at-the-boundary-of-a-one-dimensional-semi-infinite-aquifer">9.1. Sudden head rise at the boundary of a one-dimensional semi-infinite aquifer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#laplace-solution-for-the-theis-well-function">9.2. Laplace solution for the Theis well function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TransientGroundwater.html#stehfest-for-numerical-back-transformation-of-laplace-solutions">9.3. Stehfest for numerical back-transformation of Laplace solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TransientGroundwater.html#bibliography">10. Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exams_from_2006.html">11. Previous exams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#open-book-exam-1h-feb-7-2022">11.1. Open-book exam (1h), Feb 7, 2022</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1">11.1.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2">11.1.2. Question 2:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-1h-feb-23-2021">11.2. Closed-book exam (1h), Feb 23, 2021</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-1">11.2.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-1">11.2.2. Question 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3">11.2.3. Question 3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4">11.2.4. Question 4:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-1h-feb-4-2020">11.3. Closed book exam (1h), Feb 4, 2020</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-2">11.3.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-2">11.3.2. Question 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-1">11.3.3. Question 3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-1">11.3.4. Question 4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-5">11.3.5. Question 5:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-reexam-1h-march-2018">11.4. Closed book reexam (1h), March 2018</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-3">11.4.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-3">11.4.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-2">11.4.3. Question 3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-1h-feb-7-2017">11.5. Closed book exam (1h), Feb 7, 2017</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-4">11.5.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-4">11.5.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-3">11.5.3. Question 3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-reexam-1h-2016">11.6. Closed book reexam (1h), 2016</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-5">11.6.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-5">11.6.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-4">11.6.3. Question 3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-1h-feb-1-2016">11.7. Closed-book exam (1h), Feb 1, 2016</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-16-points">11.7.1. Question 1: (16 points)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-14-points">11.7.2. Question 2: (14 points)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-1h-feb-2015">11.8. Closed-book exam (1h), Feb 2015</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-6">11.8.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-6">11.8.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-5">11.8.3. Question 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-2">11.8.4. Question 4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-reexam-1h-march-2015">11.9. Closed-book reexam (1h), March 2015</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-7">11.9.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-7">11.9.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-6">11.9.3. Question 3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-feb-2014">11.10. Closed book exam, Feb 2014</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-8">11.10.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-8">11.10.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-7">11.10.3. Question 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-3">11.10.4. Question 4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-1h-feb-3-2011">11.11. Closed-book exam (1h), Feb 3, 2011</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-pressure-in-confined-aquifer">11.11.1. Question 1: Pressure in confined aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-9">11.11.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-8">11.11.3. Question 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-wells">11.11.4. Question 4: wells</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-1h-feb-2010">11.12. Closed-book exam (1h), Feb 2010</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-9">11.12.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-10">11.12.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-9">11.12.3. Question 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-4">11.12.4. Question 4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-3h-feb-2009">11.13. Closed-book exam (3h), Feb 2009</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-10">11.13.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-11">11.13.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-10">11.13.3. Question 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-5">11.13.4. Question 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-6">11.13.5. Question 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-5-1">11.13.6. Question 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-6">11.13.7. Question 6</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-3h-feb-2007">11.14. Closed-book exam (3h), Feb 2007</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-general">11.14.1. Question 1: General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-diffusion-equation">11.14.2. Question 2: Diffusion equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-fluctuation-groundwater">11.14.3. Question 3: Fluctuation groundwater</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-flow-to-an-extraction-canal">11.14.4. Question 4: Flow to an extraction canal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-well-in-semi-confined-aquifer">11.14.5. Question 4: Well in semi-confined aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-6-drawdown-due-to-a-pumping-station-in-an-unconfined-aquifer">11.14.6. Question 6: Drawdown due to a pumping station in an unconfined aquifer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006.html#closed-book-exam-3h-feb-2006">11.15. Closed-book exam (3h), Feb 2006</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-1-conceptual">11.15.1. Question 1: Conceptual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-2-characteristic-time-of-groundwater-basin">11.15.2. Question 2: Characteristic time of groundwater basin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-3-tides-in-groundwater">11.15.3. Question 3: Tides in groundwater</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-4-aquifer-with-river">11.15.4. Question 4: Aquifer with river</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-5-well-in-a-confined-aquifer">11.15.5. Question 5: Well in a confined aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-6-well-in-a-leaky-aquifer">11.15.6. Question 6: Well in a leaky aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006.html#question-7-well-in-an-unconfined-aquifer">11.15.7. Question 7: Well in an unconfined aquifer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exams_from_2006%2Banswers.html">12. Previous exams with answers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#open-book-exam-1h-feb-7-2022">12.1. Open-book exam (1h), Feb 7, 2022</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1">12.1.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2">12.1.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3">12.1.3. Question 3:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-1h-feb-23-2021">12.2. Closed-book exam (1h), Feb 23, 2021</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-1">12.2.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-1">12.2.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-1">12.2.3. Question 3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-4">12.2.4. Question 4:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-1h-feb-4-2020">12.3. Closed book exam (1h), Feb 4, 2020</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-2">12.3.1. Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-2">12.3.2. Question 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-2">12.3.3. Question 3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-reexam-1h-march-2018">12.4. Closed book reexam (1h), March 2018</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-3">12.4.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-3">12.4.2. Question 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-3">12.4.3. Question 3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-1h-feb-7-2017">12.5. Closed book exam (1h), Feb 7, 2017</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-4">12.5.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-4">12.5.2. Question 3:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-reexam-1h-feb-2016">12.6. Closed book reexam (1h), Feb 2016</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-5">12.6.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-4">12.6.2. Question 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-5">12.6.3. Question 3:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-1h-feb-1-2016">12.7. Closed-book exam (1h), Feb 1, 2016</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-16-points">12.7.1. Question 1: (16 points)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-14-points">12.7.2. Question 2: (14 points)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#close-book-exam-1h-feb-2015">12.8. Close-book exam (1h), Feb 2015</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-6">12.8.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-5">12.8.2. Question 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-6">12.8.3. Question 3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-4-1">12.8.4. Question 4:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-reexam-1h-march-2015">12.9. Closed-book reexam (1h), March 2015</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-7">12.9.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#qustion-2">12.9.2. Qustion 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-7">12.9.3. Question 3:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-1h-feb-2014">12.10. Closed-book exam (1h), Feb 2014</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-8">12.10.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-6">12.10.2. Question 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#qestion-3">12.10.3. Qestion 3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-4-2">12.10.4. Question 4</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-1h-feb-3-2011">12.11. Closed-book exam (1h), Feb 3, 2011</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-pressure-in-confined-aquifer">12.11.1. Question 1: Pressure in confined aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-tidal-waves">12.11.2. Question 2: Tidal waves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-characteristic-time-of-groundwater-systems">12.11.3. Question 2: Characteristic time of groundwater systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-4-wells">12.11.4. Question 4: Wells</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-1h-feb-5-2010">12.12. Closed-book exam (1h), Feb 5, 2010</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-9">12.12.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-7">12.12.2. Question 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-8">12.12.3. Question 3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#quesiton-4">12.12.4. Quesiton 4:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-3h-feb-2009">12.13. Closed-book exam (3h), Feb 2009</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-10">12.13.1. Question 1:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-8">12.13.2. Question 2:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-9">12.13.3. Question 3:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-4-3">12.13.4. Question 4:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-5">12.13.5. Question 5:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-6">12.13.6. Question 6:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#quesiton-7">12.13.7. Quesiton 7:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-3h-feb-2007">12.14. Closed-book exam (3h), Feb 2007</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-conceptual">12.14.1. Question 1: Conceptual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-diffusion-equation">12.14.2. Question 2: Diffusion equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-3-fluctuation-groundwater">12.14.3. Question 3: Fluctuation groundwater</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-4-flow-to-an-extraction-canal">12.14.4. Question 4: Flow to an extraction canal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-5-well-in-semi-confined-aquifer">12.14.5. Question 5: Well in semi-confined aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-6-drawdown-due-to-a-pumping-station-in-an-unconfined-aquifer">12.14.6. Question 6: Drawdown due to a pumping station in an unconfined aquifer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exams_from_2006%2Banswers.html#closed-book-exam-3h-feb-2006">12.15. Closed-book exam (3h) Feb 2006</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-1-conceptual-1">12.15.1. Question 1: Conceptual</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-2-characteristic-time-of-groundwater-basin">12.15.2. Question 2: Characteristic time of groundwater basin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#quesiton-3-tides-in-groundwater">12.15.3. Quesiton 3: Tides in groundwater</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-4-aquifer-with-river">12.15.4. Question 4: Aquifer with river</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-5-well-in-a-confined-aquifer">12.15.5. Question 5: Well in a confined aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-6-well-in-a-leaky-aquifer">12.15.6. Question 6: Well in a leaky aquifer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exams_from_2006%2Banswers.html#question-7-well-in-an-unconfined-aquifer">12.15.7. Question 7: Well in an unconfined aquifer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="TransientGroundwater.html" class="btn btn-neutral float-right" title="1. Nomenclature" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Prof. dr.ir. T.N.Olsthoorn.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

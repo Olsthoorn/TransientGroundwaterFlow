@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/Theo/Instituten-Groepen-Overleggen/IHE/git_TransientGroundwaterFlow/readthedocs/Course2022'
+make: Leaving directory `/Users/Theo/Instituten-Groepen-Overleggen/IHE/git_TransientGroundwaterFlow/readthedocs/Course2022'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
