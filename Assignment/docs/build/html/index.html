@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to IHE Delft’s Transient Groundwater Flow Documentation! &mdash; Assignments Transient 0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Previous Assignments" href="old_assignments.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> Assignments Transient
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="old_assignments.html">1. Previous Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssWithAnswers.html">2. Assignment 2016 2022 with answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2022.html">3. Assignment Jan 2022. Wells along a river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2021.html">4. Assignment Jan 2021. Wells along a river in a closed valley</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2020.html">5. Assigment Jan 2020</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2019.html">6. Assignment Jan 2019. A building pit next to a river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2017.html">7. Assignment Jan 2017 preventing extraction from river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2016.html">8. Assignment Jan 2016. Several exercises based on the syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Techniques.html">9. Some python techniques useful for your assignment</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Assignments Transient</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Welcome to IHE Delft’s Transient Groundwater Flow Documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="welcome-to-ihe-delft-s-transient-groundwater-flow-documentation">
+<h1>Welcome to IHE Delft’s Transient Groundwater Flow Documentation!<a class="headerlink" href="#welcome-to-ihe-delft-s-transient-groundwater-flow-documentation" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="old_assignments.html">1. Previous Assignments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="old_assignments.html#assignment-jan-2022-wells-along-a-river">1.1. Assignment Jan 2022. Wells along a river.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="old_assignments.html#assignment-jan-2021-wells-along-a-river-in-a-closed-valley">1.2. Assignment Jan 2021. Wells along a river in a closed valley.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="old_assignments.html#assignment-jan-2020-same-as-jan-2018">1.3. Assignment Jan 2020. Same as Jan 2018</a></li>
+<li class="toctree-l2"><a class="reference internal" href="old_assignments.html#assignment-jan-2019-a-building-pit-next-to-a-river">1.4. Assignment Jan 2019. A building pit next to a river.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="old_assignments.html#assignment-jan-2018-water-company-uses-asr-system-to-prevent-river-inflow-during-summer">1.5. Assignment Jan 2018. Water company uses ASR system to prevent river inflow during summer.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="old_assignments.html#assignment-jan-2017-water-company-uses-asr-system-to-prevent-extraction-from-tiver-during-summer">1.6. Assignment Jan 2017. Water company uses ASR system to prevent extraction from tiver during summer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="old_assignments.html#assignment-jan-2016-several-exercises-based-on-the-syllabus">1.7. Assignment Jan 2016. Several exercises based on the syllabus.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssWithAnswers.html">2. Assignment 2016 2022 with answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2022.html">3. Assignment Jan 2022. Wells along a river</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2022.html#Problem-statement">3.1. Problem statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2022.html#Convenient-plot-functions">3.2. Convenient plot functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2022.html#The-data">3.3. The data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2021.html">4. Assignment Jan 2021. Wells along a river in a closed valley</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Problem-statement">4.1. Problem statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Assignment-questions">4.2. Assignment questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Import-the-modules-that-we-will-need">4.3. Import the modules that we will need</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Get-and-show-our-data-(pumping-test-data)">4.4. Get and show our data (pumping test data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Plot-of-drawdown-versus-t/r^2-instead-of-versus-t">4.5. Plot of drawdown versus <span class="math notranslate nohighlight">\(t/r^2\)</span> instead of versus <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Our-data-on-versus-\log(t)">4.6. Our data on versus <span class="math notranslate nohighlight">\(\log(t)\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Define-the-three-wells-and-compute-the-dd-at-one-point-as-a-function-of-time">4.7. Define the three wells and compute the dd at one point as a function of time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Drawdown-along-a-lines-parallel-to-the-axis-of-the-valley-(y-axis)-for-different-times">4.8. Drawdown along a lines parallel to the axis of the valley (y-axis) for different times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#To-compute-the-drawdown-we-need-to-mirror-the-well-in-the-center-of-the-valley-with-respect-to-be-the-river-on-the-left-and-the-closed-side-at-the-right">4.9. To compute the drawdown we need to mirror the well in the center of the valley with respect to be the river on the left and the closed side at the right</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#These-results-show-the-correct-behavior:">4.10. These results show the correct behavior:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#What-is-the-influx-from-the-river-into-the-aquifer?">4.11. What is the influx from the river into the aquifer?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Implement-the-flow-across-the-midline-between-a-well-and-its-opposite-mirror-to-simulate-a-river-or-canal.">4.12. Implement the flow across the midline between a well and its opposite mirror to simulate a river or canal.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#The-inflow-as-a-function-of-time-(to-prove-that-it-will-approach-the-extraction-from-the-well)">4.13. The inflow as a function of time (to prove that it will approach the extraction from the well)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Verfication-of-the-mirroring-scheme-using-cross-section-of-drawdown-and-specific-discharge">4.14. Verfication of the mirroring scheme using cross section of drawdown and specific discharge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Required-depth-of-the-well-screens">4.15. Required depth of the well screens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2021.html#Conclusion">4.16. Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2020.html">5. Assigment Jan 2020</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2019.html">6. Assignment Jan 2019. A building pit next to a river</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2019.html#Problem-statement">6.1. Problem statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2019.html#Questions">6.2. Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2019.html#Hints">6.3. Hints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2019.html#Modules-you-wil-need-are-imported-here">6.4. Modules you wil need are imported here</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2019.html#Convenient-plotting-functions">6.5. Convenient plotting functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2019.html#Setup-the-situation,-define-the-wells-and-observation-point">6.6. Setup the situation, define the wells and observation point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2019.html#Impact-of-river-tide">6.7. Impact of river tide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2019.html#How-much-water-is-extracted-from-the-river?">6.8. How much water is extracted from the river?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2017.html">7. Assignment Jan 2017 preventing extraction from river</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2017.html#Problem-statement:-water-company-uses-ASR-system-to-prevent-extraction-from-river-during-summer">7.1. Problem statement: water company uses ASR system to prevent extraction from river during summer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2017.html#First-show-the-heads-and-the-specific-discharge-to-gain-overview">7.2. First show the heads and the specific discharge to gain overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2017.html#Compute-the-infiltration-from-the-river-if-the-extration-were-continuous-after-t=0">7.3. Compute the infiltration from the river if the extration were continuous after <span class="math notranslate nohighlight">\(t=0\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2017.html#Simulating-the-actual-flow-regime,-with-winter-injection-and-summer-extraction.">7.4. Simulating the actual flow regime, with winter injection and summer extraction.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2017.html#Conclusion">7.5. Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/AssJan2016.html">8. Assignment Jan 2016. Several exercises based on the syllabus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Intro">8.1. Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Capillary-rise">8.2. Capillary rise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Tidal-fluctuations">8.3. Tidal fluctuations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Temperature-variations-in-the-subsurface">8.4. Temperature variations in the subsurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Effect-of-a-sudden-change-of-the-water-level-in-a-river">8.5. Effect of a sudden change of the water level in a river</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Decay-of-head-in-a-strip-of-land-of-given-width-(characteristic-time-of-the-groundwater-system)">8.6. Decay of head in a strip of land of given width (characteristic time of the groundwater system)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Pumping-test-Dalem">8.7. Pumping test Dalem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Using-the-traditional-method,-matching-the-data-and-the-Hantush-curves-on-double-log-paper-(shifting-until-the-best-fit-is-obtained.)">8.8. Using the traditional method, matching the data and the Hantush curves on double log paper (shifting until the best fit is obtained.)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/AssJan2016.html#Generating-test-data-for-the-pumping-test-analyses,-so-that-each-students-will-have-his/her-unique-test-data.">8.9. Generating test data for the pumping test analyses, so that each students will have his/her unique test data.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/Techniques.html">9. Some python techniques useful for your assignment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Introduction">9.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Strings-(unchangable-series-of-characters)">9.2. Strings (unchangable series of characters)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Tuples-(unchangeble-lists)">9.3. Tuples (unchangeble lists)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Lists-are-just-like-tuples,-but-can-be-changed-in-place">9.4. Lists are just like tuples, but can be changed in place</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Numpy-arrays,-so-called-ndarrays-(n-dimensional-arrays)">9.5. Numpy arrays, so-called ndarrays (n-dimensional arrays)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Some-ways-to-generate-arrays">9.6. Some ways to generate arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#For-loops-with-zipping-and-enumerate">9.7. For-loops with zipping and enumerate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Superposition,-using-logical-indexing-to-handle-switch-times">9.8. Superposition, using logical indexing to handle switch times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Some-elegant-logical-indexing,-which-is-extremely-useful">9.9. Some elegant logical indexing, which is extremely useful</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#List-comprehensions-to-generate-and-filter-lists">9.10. List comprehensions to generate and filter lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/Techniques.html#Conclusions">9.11. Conclusions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="old_assignments.html" class="btn btn-neutral float-right" title="1. Previous Assignments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Theo N. Olsthoorn.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

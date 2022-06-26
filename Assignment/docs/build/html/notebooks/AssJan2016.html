@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. Assignment Jan 2016. Several exercises based on the syllabus &mdash; Assignments Transient 0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9. Some python techniques useful for your assignment" href="Techniques.html" />
+    <link rel="prev" title="7. Assignment Jan 2017 preventing extraction from river" href="AssJan2017.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Assignments Transient
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../old_assignments.html">1. Previous Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssWithAnswers.html">2. Assignment 2016 2022 with answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2022.html">3. Assignment Jan 2022. Wells along a river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2021.html">4. Assignment Jan 2021. Wells along a river in a closed valley</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2020.html">5. Assigment Jan 2020</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2019.html">6. Assignment Jan 2019. A building pit next to a river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2017.html">7. Assignment Jan 2017 preventing extraction from river</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Assignment Jan 2016. Several exercises based on the syllabus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Intro">8.1. Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Capillary-rise">8.2. Capillary rise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Tidal-fluctuations">8.3. Tidal fluctuations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Temperature-variations-in-the-subsurface">8.4. Temperature variations in the subsurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Effect-of-a-sudden-change-of-the-water-level-in-a-river">8.5. Effect of a sudden change of the water level in a river</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Decay-of-head-in-a-strip-of-land-of-given-width-(characteristic-time-of-the-groundwater-system)">8.6. Decay of head in a strip of land of given width (characteristic time of the groundwater system)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Pumping-test-Dalem">8.7. Pumping test Dalem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Implement-the-Theis-and-Hantush-well-functions-and-show-their-type-curves">8.7.1. Implement the Theis and Hantush well functions and show their type curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Loading-(importing)-the-pumping-test-data-for-the-assignment-from-excel.">8.7.2. Loading (importing) the pumping test data for the assignment from excel.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Showing-the-pumping-test-data-on-different-scales">8.7.3. Showing the pumping test data on different scales</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Showing-the-pumping-test-data-as-a-function-of-t/r^2-instead-of-t">8.7.4. Showing the pumping test data as a function of <span class="math notranslate nohighlight">\(t/r^2\)</span> instead of <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Working-out-the-pumping-test">8.7.5. Working out the pumping test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#First-method,-use-the-straight-part-of-the-drawdown">8.7.6. First method, use the straight part of the drawdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Results">8.7.7. Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Using-the-traditional-method,-matching-the-data-and-the-Hantush-curves-on-double-log-paper-(shifting-until-the-best-fit-is-obtained.)">8.8. Using the traditional method, matching the data and the Hantush curves on double log paper (shifting until the best fit is obtained.)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Generating-test-data-for-the-pumping-test-analyses,-so-that-each-students-will-have-his/her-unique-test-data.">8.9. Generating test data for the pumping test analyses, so that each students will have his/her unique test data.</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Techniques.html">9. Some python techniques useful for your assignment</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Assignments Transient</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">8. </span>Assignment Jan 2016. Several exercises based on the syllabus</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Assignment-Jan-2016.-Several-exercises-based-on-the-syllabus">
+<h1><span class="section-number">8. </span>Assignment Jan 2016. Several exercises based on the syllabus<a class="headerlink" href="#Assignment-Jan-2016.-Several-exercises-based-on-the-syllabus" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author</dt>
+<dd class="field-odd"><p>T.N.Olsthoorn, Jan 2016</p>
+</dd>
+</dl>
+<section id="Intro">
+<h2><span class="section-number">8.1. </span>Intro<a class="headerlink" href="#Intro" title="Permalink to this headline"></a></h2>
+<p>This is the last assignment using Excel. Later ones all used Python (Jupyter notebooks), which are much more powerfull for this kind of work and also freely available, where Excel is not. The workout in Excel is availale. Here we will use Python.</p>
+<p>The assignment is split into 7 parts, joined in this Jupyter notebook.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">newfig</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;xx-small&#39;</span><span class="p">,</span> <span class="s1">&#39;x-small&#39;</span><span class="p">,</span> <span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="s1">&#39;x-large&#39;</span><span class="p">,</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">]</span>
+
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fontsize</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">fontsize</span> <span class="ow">in</span> <span class="n">sizes</span><span class="p">,</span> \
+        <span class="s2">&quot;fontsize not int and not in [</span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sizes</span><span class="p">))</span>
+
+    <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xlim</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ylim</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xscale</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="n">xscale</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">yscale</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="n">yscale</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="p">]</span> <span class="o">+</span>
+             <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">()):</span>
+        <span class="n">item</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Capillary-rise">
+<h2><span class="section-number">8.2. </span>Capillary rise<a class="headerlink" href="#Capillary-rise" title="Permalink to this headline"></a></h2>
+<p>For grain sizes <span class="math notranslate nohighlight">\(d=0.002\text{, }0.02\text{, }0.2\text{ and }2\,\mathrm{mm}\)</span> determine the capillary rise. Assume the angle between the free surface and the straw wall in the equivalent straw is 20^{o} and the surface tension is <span class="math notranslate nohighlight">\(\tau=75\times10^{-3}\,\mathrm{N/m}\)</span>. Also assume that the pore diameter, <span class="math notranslate nohighlight">\(r\)</span>, is 20% of the grain diameter <span class="math notranslate nohighlight">\(d\)</span>. The density of Water <span class="math notranslate nohighlight">\(\rho_{w}=1000\,\mathrm{kg/m^{3}}\)</span> and gravity <span class="math notranslate nohighlight">\(g=10\,\mathrm{m/s^{2}}\)</span>, which is the same as
+<span class="math notranslate nohighlight">\(\text{10\,N/kg}\)</span>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">75e-3</span><span class="p">,</span> <span class="mi">20</span> <span class="o">/</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">9.81</span> <span class="c1"># (N/m) surface tension, (-) angle of contact of fluid surface with straw, (kg/m3) water density, (N/kg) gravity</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.002</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span> <span class="o">*</span> <span class="mf">1e-3</span> <span class="c1"># m, grain diameter</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">d</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>  <span class="o">/</span> <span class="p">(</span><span class="n">rho</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">r</span><span class="p">)</span>
+
+<span class="n">dmm</span><span class="p">,</span> <span class="n">rmm</span><span class="p">,</span> <span class="n">hmm</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">d</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">h</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="s1">&#39; </span><span class="si">{:6.4f}</span><span class="s1">&#39;</span>
+
+<span class="nb">print</span><span class="p">((</span><span class="s1">&#39;d in mm:&#39;</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="s1">&#39; </span><span class="si">{:6.4f}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">dmm</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="s1">&#39;r in mm:&#39;</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="s1">&#39; </span><span class="si">{:6.4f}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">rmm</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="s1">&#39;h in mm:&#39;</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="s1">&#39; </span><span class="si">{:6.0f}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">hmm</span><span class="p">))</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+d in mm: 0.0020 0.0200 0.2000 2.0000 20.0000
+r in mm: 0.0004 0.0040 0.0400 0.4000 4.0000
+h in mm:  35921   3592    359     36      4
+</pre></div></div>
+</div>
+</section>
+<section id="Tidal-fluctuations">
+<h2><span class="section-number">8.3. </span>Tidal fluctuations<a class="headerlink" href="#Tidal-fluctuations" title="Permalink to this headline"></a></h2>
+<p>Let the solution to the diffusion equation for the confined aquifer be</p>
+<div class="math notranslate nohighlight">
+\[s(x,t)=A\exp(-ax)\sin(\omega t-ax)\]</div>
+<p>and let <span class="math notranslate nohighlight">\(kD=1000\,\mathrm{m^{2}/d}, S=10^{-2}\)</span> and the amplitude <span class="math notranslate nohighlight">\(A=2\,\mathrm{m}\)</span>. Let the cycle time be <span class="math notranslate nohighlight">\(T=1\,\mathrm{d}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Take time in days and show graphically the head change <span class="math notranslate nohighlight">\(s(x,t)=\phi(x,t)-\phi_{0}\)</span> as a function of <span class="math notranslate nohighlight">\(x\)</span> for some values of <span class="math notranslate nohighlight">\(t\)</span>, assuming the constant <span class="math notranslate nohighlight">\(\theta_{0}=\pi/3\)</span>. Use times <span class="math notranslate nohighlight">\(t=2/24\text{, }4/24\text{, }6/24\text{ and }8/24\,\mathrm{days}\)</span>.</p></li>
+<li><p>Add the graph of the envelope of the wave as a function of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>Also make a graph of the discharge <span class="math notranslate nohighlight">\(Q(x,t)\)</span> showing <span class="math notranslate nohighlight">\(Q\)</span> as a function of <span class="math notranslate nohighlight">\(x\)</span> for the same times.</p></li>
+<li><p>How far inland can we measure the effect of the tide if our water level logger device registers any head change beyond 1 cm ?</p></li>
+<li><p>What is the velocity of the wave?</p></li>
+<li><p>What is delay of the wave is at <span class="math notranslate nohighlight">\(x=1000\,\mathrm{m}\)</span> from the shore (or show the delay?</p></li>
+<li><p>What the wavelength? Verify this in you graph.</p></li>
+<li><p>Add the envelopes for the case that the storage coefficient is <span class="math notranslate nohighlight">\(S=10^{-2}\)</span> instead of <span class="math notranslate nohighlight">\(S_{y}=0.2\)</span>.</p></li>
+<li><p>What is the distance over which the envelope reduces by a factor 2?</p></li>
+</ol>
+<p>Below the graph of the tidal wave in the subsurface is shown for different times. The envelopes are also shown in black.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kD</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span> <span class="c1"># m2/d, # (-), m, d, rad</span>
+
+<span class="n">txt</span> <span class="o">=</span> <span class="s1">&#39;kD = </span><span class="si">{:.0f}</span><span class="s1"> m2/d, S_y = </span><span class="si">{:.2f}</span><span class="s1">, A = </span><span class="si">{:.1f}</span><span class="s1"> m, T = </span><span class="si">{:.1f}</span><span class="s1"> d, theta = </span><span class="si">{:.3f}</span><span class="s1"> rad&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kD</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">theta</span><span class="p">)</span>
+
+<span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">T</span> <span class="c1"># rad/d</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">kD</span><span class="p">))</span>
+
+<span class="n">show_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mf">2.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">24.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s2">&quot;Tidal fluctuations&quot;</span><span class="p">,</span> <span class="s2">&quot;x [m]&quot;</span><span class="p">,</span> <span class="s2">&quot;s [m]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s2">&quot;Induced flow [m2/d]&quot;</span><span class="p">,</span> <span class="s2">&quot;x [m]&quot;</span><span class="p">,</span> <span class="s2">&quot;Q [m2/d]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">theta</span><span class="p">)</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">A</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">theta</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;t = </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> d&#39;</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;t = </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> d&#39;</span><span class="p">)</span>
+
+<span class="c1"># Envelopes</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">+</span><span class="n">env</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;top envelope&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">env</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;bottom env.&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+
+<span class="c1"># Wave veolocity</span>
+<span class="n">vw</span> <span class="o">=</span> <span class="n">omega</span> <span class="o">/</span> <span class="n">a</span> <span class="c1"># m/d</span>
+<span class="n">Lw</span> <span class="o">=</span> <span class="n">vw</span> <span class="o">*</span> <span class="n">T</span>    <span class="c1"># wave length</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Q4: x where envelop is 1 cm: </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="n">env</span> <span class="o">&gt;=</span> <span class="mf">0.01</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Q5: Wave veolocity = </span><span class="si">{</span><span class="n">vw</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m/d.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Q6: wave length = </span><span class="si">{</span><span class="n">Lw</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m, because cycle time T = </span><span class="si">{</span><span class="n">T</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1"> d.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Q7: Delay at x = 1000 m is : </span><span class="si">{</span><span class="mi">1000</span><span class="o">/</span><span class="n">vw</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> d.&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show where evn = 0.01 m in graph</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">env</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;env = 1 cm</span><span class="se">\n</span><span class="s1">V&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the wave length like a dimension line |&lt;----&gt;| using annotate</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Lw</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;arrowstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;|-|&gt;&#39;</span><span class="p">})</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Lw</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;arrowstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;|-|&#39;</span><span class="p">})</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">Lw</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mf">2.05</span><span class="p">,</span> <span class="s1">&#39;wave length = </span><span class="si">{Lw:.0f}</span><span class="s1"> m&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s2">&quot;Tidal fluctuations&quot;</span><span class="p">,</span> <span class="s2">&quot;x [m]&quot;</span><span class="p">,</span> <span class="s2">&quot;s [m]&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">S</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">kD</span><span class="p">))</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">+</span><span class="n">env</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Top    env. for S=</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="n">env</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bottom env. for S=</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">xp</span><span class="p">,</span> <span class="n">yp</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">env</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">A</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">env</span><span class="p">[</span><span class="n">env</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">A</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;top env. for S = </span><span class="si">{</span><span class="n">S</span><span class="si">:</span><span class="s1">.02f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="o">+</span><span class="n">yp</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">xp</span> <span class="o">+</span> <span class="mi">250</span><span class="p">,</span> <span class="o">+</span><span class="n">yp</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;arrowstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">},</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;bottom env. for S = </span><span class="si">{</span><span class="n">S</span><span class="si">:</span><span class="s1">.02f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">xp</span><span class="p">,</span> <span class="o">-</span><span class="n">yp</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">xp</span> <span class="o">+</span> <span class="mi">250</span><span class="p">,</span> <span class="o">-</span><span class="n">yp</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;arrowstyle&#39;</span><span class="p">:</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">},</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Q9: The distance over which the amplitude declines by a factor 2 for S = </span><span class="si">{</span><span class="n">S</span><span class="si">:</span><span class="s1">.02f</span><span class="si">}</span><span class="s1"> is  ln(2) / a = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">a</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m.&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Q4: x where envelop is 1 cm: 945 m
+Q5: Wave veolocity = 1121 m/d.
+Q6: wave length = 1121 m, because cycle time T = 1.0 d.
+Q7: Delay at x = 1000 m is : 0.89 d.
+Q9: The distance over which the amplitude declines by a factor 2 for S = 0.01 is  ln(2) / a = 124 m.
+Q9: The distance over which the amplitude declines by a factor 2 for S = 0.20 is  ln(2) / a = 28 m.
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_7_1.png" src="../_images/notebooks_AssJan2016_7_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_7_2.png" src="../_images/notebooks_AssJan2016_7_2.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_7_3.png" src="../_images/notebooks_AssJan2016_7_3.png" />
+</div>
+</div>
+</section>
+<section id="Temperature-variations-in-the-subsurface">
+<h2><span class="section-number">8.4. </span>Temperature variations in the subsurface<a class="headerlink" href="#Temperature-variations-in-the-subsurface" title="Permalink to this headline"></a></h2>
+<p>Consider a sinusoidal fluctuation of the temperature at ground surface. Assume the soil to be saturated with porosity <span class="math notranslate nohighlight">\(\epsilon=0.35\)</span>, while the heat capacity of grains of the aquifer is <span class="math notranslate nohighlight">\(\rho_{g}c_{g}=2650\times800\,\mathrm{J/m^{3}/K}\)</span> and the heat capacity of the water is <span class="math notranslate nohighlight">\(\rho_{w}c_{w}=1000\times4200\,\mathrm{J/m^{3}/K}\)</span>. Notice that K stands for the absolute temperature, Kelvin, which is the same as <span class="math notranslate nohighlight">\(\mathrm{Celsius}+273.1\,\mathrm{K}\)</span>.</p>
+<p>Assume that the average year-round ground temperature is <span class="math notranslate nohighlight">\(10^{o}\mathrm{C}\)</span> and the fluctuation is <span class="math notranslate nohighlight">\(\Delta T = \pm8^{o}\mathrm{C}\)</span>. Also use <span class="math notranslate nohighlight">\(\lambda_{w}=2\,\mathrm{W/K/m}\)</span> and <span class="math notranslate nohighlight">\(\lambda_{g}=4\,\mathrm{W/K/m}\)</span>.</p>
+<p>Show the temperature envelopes for</p>
+<ul class="simple">
+<li><p>Diurnal (=daily)</p></li>
+<li><p>Seasonal (=yearly)</p></li>
+<li><p>Centennial (=one wave lasting a century)</p></li>
+</ul>
+<p>Lw</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lamb_w</span><span class="p">,</span> <span class="n">lamb_g</span><span class="p">,</span> <span class="n">rho_w</span><span class="p">,</span> <span class="n">rho_g</span><span class="p">,</span> <span class="n">c_w</span><span class="p">,</span> <span class="n">c_g</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="n">DT</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">,</span> <span class="mf">2650.</span><span class="p">,</span> <span class="mf">4200.</span><span class="p">,</span> <span class="mf">800.</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">8.</span> <span class="c1"># dimensions see text above.</span>
+
+<span class="n">lamb</span> <span class="o">=</span> <span class="n">eps</span> <span class="o">*</span> <span class="n">lamb_w</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">eps</span><span class="p">)</span> <span class="o">*</span> <span class="n">lamb_g</span> <span class="o">*</span> <span class="mi">86400</span> <span class="c1"># J/d / K / m</span>
+<span class="n">rhoc</span>  <span class="o">=</span> <span class="n">eps</span> <span class="o">*</span> <span class="p">(</span><span class="n">rho_w</span> <span class="o">*</span> <span class="n">c_w</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">eps</span><span class="p">)</span> <span class="o">*</span> <span class="n">rho_g</span> <span class="o">*</span> <span class="n">c_g</span> <span class="c1"># J/m3/K</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s2">&quot;Temperature fluctuations in subsurface depending on cycle time.</span><span class="se">\n</span><span class="s2">There is a clear difference in penetration depth depending on the cycle time.&quot;</span><span class="p">,</span> <span class="s2">&quot;Temp rel. to average [Celcius]&quot;</span><span class="p">,</span> <span class="s2">&quot;z [m]&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">DT</span><span class="p">,</span> <span class="o">+</span><span class="n">DT</span><span class="p">))</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="mf">0.</span>
+
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">365</span><span class="p">,</span> <span class="mi">36500</span><span class="p">]:</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">T</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">rhoc</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">lamb</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">it</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">*</span> <span class="n">T</span><span class="p">):</span>
+        <span class="n">TC</span> <span class="o">=</span> <span class="n">DT</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">omega</span> <span class="o">*</span> <span class="n">t</span> <span class="o">-</span> <span class="n">a</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;cycle time = </span><span class="si">{</span><span class="n">T</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> d&#39;</span> <span class="k">if</span> <span class="n">it</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">TC</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fba99ca24c0&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_12_1.png" src="../_images/notebooks_AssJan2016_12_1.png" />
+</div>
+</div>
+</section>
+<section id="Effect-of-a-sudden-change-of-the-water-level-in-a-river">
+<h2><span class="section-number">8.5. </span>Effect of a sudden change of the water level in a river<a class="headerlink" href="#Effect-of-a-sudden-change-of-the-water-level-in-a-river" title="Permalink to this headline"></a></h2>
+<p>An aquifer with transmissivity <span class="math notranslate nohighlight">\(kD=400\,\mathrm{m^{2}/d}\)</span> and storage coefficient <span class="math notranslate nohighlight">\(S_{y}=0.1\)</span> is in direct contact with a river. The water level in the river suddenly changes by <span class="math notranslate nohighlight">\(A=2\,\mathrm{m}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Show the effect of this change as a function of time for points at <span class="math notranslate nohighlight">\(x=10\text{, }100\text{ and }1000\,\mathrm{m}\)</span> from the river.</p></li>
+<li><p>How long does it take until the head change s in these three points equals 10 cm?</p></li>
+<li><p>Show the discharge over time at these points.</p></li>
+</ol>
+<p>Lw</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">erfc</span>
+
+<span class="n">kD</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.0</span> <span class="c1"># for dimensions see text above</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15005</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">1.</span><span class="p">);</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="n">show_dist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">100.</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">]</span>
+<span class="n">show_times</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">,</span> <span class="mf">90.</span><span class="p">,</span> <span class="mf">180.</span><span class="p">,</span> <span class="mf">365.</span><span class="p">]</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s2">&quot;Head change and Q (dashed) at different x as a function of time&quot;</span><span class="p">,</span> <span class="s2">&quot;time [d]&quot;</span><span class="p">,</span> <span class="s2">&quot;head change [m]&quot;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s2">&quot;Head change and Q (dashed) at different t as a function of x&quot;</span><span class="p">,</span>    <span class="s2">&quot;x[m]&quot;</span><span class="p">,</span>     <span class="s2">&quot;head change [m]&quot;</span><span class="p">)</span>
+
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax4</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Discharge, m2/d&#39;</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Discharge, m2/d&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x_</span> <span class="ow">in</span> <span class="n">show_dist</span><span class="p">:</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">x_</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t</span><span class="p">))</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">erfc</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kD</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">u</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;x = </span><span class="si">{</span><span class="n">x_</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m&#39;</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">t_</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">:</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t_</span><span class="p">))</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">erfc</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kD</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t_</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">u</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;t = </span><span class="si">{</span><span class="n">t_</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> d&#39;</span><span class="p">)</span>
+    <span class="n">ax4</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<br/><br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fba9a2f3310&gt;
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_15_1.png" src="../_images/notebooks_AssJan2016_15_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_15_2.png" src="../_images/notebooks_AssJan2016_15_2.png" />
+</div>
+</div>
+</section>
+<section id="Decay-of-head-in-a-strip-of-land-of-given-width-(characteristic-time-of-the-groundwater-system)">
+<h2><span class="section-number">8.6. </span>Decay of head in a strip of land of given width (characteristic time of the groundwater system)<a class="headerlink" href="#Decay-of-head-in-a-strip-of-land-of-given-width-(characteristic-time-of-the-groundwater-system)" title="Permalink to this headline"></a></h2>
+<p>Consider a cross section of an aquifer with transmissivity <span class="math notranslate nohighlight">\(kD=200\,\mathrm{m^{2}/d}\)</span> and <span class="math notranslate nohighlight">\(S=0.1\)</span> between 2 straight canals at a distance <span class="math notranslate nohighlight">\(L=500\,\mathrm{m}\)</span> from each other. The cross-section runs from <span class="math notranslate nohighlight">\(x=-L/2\)</span> to <span class="math notranslate nohighlight">\(x=+L/2\)</span>.</p>
+<ol class="arabic">
+<li><p>Implement the head caused by a sudden rise of water level by 2 m at both sides of the strip using superposition of a sufficient number of “mirror” strips of land.</p></li>
+<li><p>Show that this is essentially the same as the formula we implemented in class:</p>
+<div class="math notranslate nohighlight">
+\[s\left(x,t\right)=A\frac{4}{\pi}\sum_{i=1}^{\infty}\left(\frac{\left(-1\right)^{i-1}}{2i-1}\cos\left[\left(2i-1\right)\pi\frac{x}{L}\right]\exp\left[-\left(2i-1\right)^{2}\pi^{2}\frac{kD}{L^{2}S}t\right]\right)\]</div>
+</li>
+<li><p>Show the situation on 1 to 8 halftimes.</p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kD</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">L</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">500</span> <span class="c1"># for dimensions see text above.</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">L</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span><span class="p">)</span>
+<span class="n">T50</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">T</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">L</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+
+<span class="n">show_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="o">*</span> <span class="n">T50</span><span class="p">;</span> <span class="n">show_times</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decay of head n land strip (kD=</span><span class="si">{</span><span class="n">kD</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m2/d, S=</span><span class="si">{</span><span class="n">S</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, A=</span><span class="si">{</span><span class="n">A</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> m, haftime T50 = </span><span class="si">{</span><span class="n">T50</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> d)</span><span class="se">\n</span><span class="s2">Using the given analytical solution.&quot;</span><span class="p">,</span> <span class="s2">&quot;x [m]&quot;</span><span class="p">,</span> <span class="s2">&quot;h [m]&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t_</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span> <span class="c1"># notice that we atart at 1 not 0 !</span>
+        <span class="n">i2m1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">kD</span> <span class="o">/</span> <span class="p">(</span><span class="n">L</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">S</span><span class="p">)</span> <span class="o">*</span> <span class="n">t_</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">i2m1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">i2m1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">L</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span> <span class="n">i2m1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">u</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">ds</span>
+    <span class="n">s</span> <span class="o">*=</span> <span class="n">A</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;t = </span><span class="si">{</span><span class="n">t_</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decay of head n land strip (kD=</span><span class="si">{</span><span class="n">kD</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m2/d, S=</span><span class="si">{</span><span class="n">S</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, A=</span><span class="si">{</span><span class="n">A</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> m, haftime T50 = </span><span class="si">{</span><span class="n">T50</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> d)</span><span class="se">\n</span><span class="s2">using erfc functions and spatial superposition.&quot;</span><span class="p">,</span> <span class="s2">&quot;x [m]&quot;</span><span class="p">,</span> <span class="s2">&quot;h [m]&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t_</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">rs4kdt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t_</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">erfc</span><span class="p">(((</span><span class="n">i</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">L</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">rs4kdt</span><span class="p">)</span>  <span class="o">+</span> <span class="n">erfc</span><span class="p">(((</span><span class="n">i</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">L</span> <span class="o">-</span> <span class="n">x</span> <span class="p">)</span> <span class="o">*</span> <span class="n">rs4kdt</span><span class="p">))</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">ds</span>
+    <span class="n">s</span> <span class="o">*=</span> <span class="n">A</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">A</span> <span class="o">-</span> <span class="n">s</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;t = </span><span class="si">{</span><span class="n">t_</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fba9a913940&gt;
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_17_1.png" src="../_images/notebooks_AssJan2016_17_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_17_2.png" src="../_images/notebooks_AssJan2016_17_2.png" />
+</div>
+</div>
+</section>
+<section id="Pumping-test-Dalem">
+<h2><span class="section-number">8.7. </span>Pumping test Dalem<a class="headerlink" href="#Pumping-test-Dalem" title="Permalink to this headline"></a></h2>
+<p>Consider a pumping test similar to the one called “Dalem” described in Kruseman and De Ridder (1994). The situation is shown in the figure below. The data are given in the workbook “DataPumptest.xls”. It is not known beforehand whether the groundwater system is semi-confined, confined are unconfined and whether the drawdown shows delayed yield. The student should find out him/herself.</p>
+<p>Each student obtains a different data set that consists of the drawdown for three monitoring wells each at a different distance and direction from the well. The monitoring wells are in the same aquifer as the extraction well. The well discharge <span class="math notranslate nohighlight">\(Q=760\,\mathrm{m^{3}/d}\)</span>.</p>
+<p>It is the student’s task work out this pumping test in the classical way, using double log charge of both the well functions and the drawdown and determine transmissivity, storage coefficient and possibly the spreading length, resistance of the cover layer and a second storage coefficient.</p>
+<p>Hint: Use the implementation of the Theis and Hantush function, then compute the type curves. Then make a double log chart of your data and fit them on the type curves. Judge whether the fit shows a pureTheis behavior or rather follows that of the Hantush type curves. Estimate the parameters. Finally see if there is any sign of delayed yield. If so, then also determine the second storage coefficient.</p>
+<section id="Implement-the-Theis-and-Hantush-well-functions-and-show-their-type-curves">
+<h3><span class="section-number">8.7.1. </span>Implement the Theis and Hantush well functions and show their type curves<a class="headerlink" href="#Implement-the-Theis-and-Hantush-well-functions-and-show-their-type-curves" title="Permalink to this headline"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">exp1</span> <span class="k">as</span> <span class="n">W</span>  <span class="c1"># Theis well function</span>
+
+<span class="k">def</span> <span class="nf">Wh</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return Hantush well function by integration using scipy functinality.</span>
+
+<span class="sd">    This is efficient and accurate to 1e-9, which the other direct integration</span>
+<span class="sd">    methods don&#39;t achieve, even with 5000 points.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">y</span> <span class="o">-</span> <span class="p">(</span><span class="n">rho</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">y</span> <span class="p">)</span> <span class="o">/</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">w</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span> <span class="k">return</span> <span class="n">quad</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho</span><span class="p">))</span>
+
+    <span class="n">wh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frompyfunc</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 2 inputs and tow outputs h and err</span>
+
+    <span class="k">return</span> <span class="n">wh</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># cut-off error omitted</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s1">&#39;Hantush well function&#39;</span><span class="p">,</span> <span class="s1">&#39;1/u&#39;</span><span class="p">,</span> <span class="s1">&#39;W(u, rho)&#39;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span><span class="p">,</span> <span class="n">W</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Theis&#39;</span><span class="p">)</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">71</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rho</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.003</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span><span class="p">,</span> <span class="n">Wh</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;rho = </span><span class="si">{</span><span class="n">rho</span><span class="si">:</span><span class="s1">.3g</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fba9badfee0&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_21_1.png" src="../_images/notebooks_AssJan2016_21_1.png" />
+</div>
+</div>
+</section>
+<section id="Loading-(importing)-the-pumping-test-data-for-the-assignment-from-excel.">
+<h3><span class="section-number">8.7.2. </span>Loading (importing) the pumping test data for the assignment from excel.<a class="headerlink" href="#Loading-(importing)-the-pumping-test-data-for-the-assignment-from-excel." title="Permalink to this headline"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;AssJan2016ptest.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">/</span> <span class="p">(</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;time_d&#39;</span>
+
+<span class="n">Qd</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Q_m3/d&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">r_</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">r_</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]]</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Q_m3/d&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Qd = &#39;</span><span class="p">,</span> <span class="n">Qd</span><span class="p">,</span> <span class="s1">&#39; m3/d&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;r = &#39;</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="s1">&#39; m&#39;</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+           r=17  r=35  r=110  r=200
+time_d
+0.013889   0.31  0.18   0.03   0.00
+0.020833   0.34  0.21   0.04   0.00
+0.027778   0.37  0.24   0.06   0.01
+0.034722   0.40  0.27   0.08   0.02
+0.041667   0.41  0.28   0.09   0.03
+0.052083   0.43  0.30   0.11   0.04
+0.062500   0.44  0.31   0.11   0.04
+0.072917   0.45  0.32   0.13   0.05
+0.083333   0.46  0.33   0.13   0.05
+0.125000   0.49  0.36   0.16   0.07
+0.166667   0.52  0.39   0.19   0.09
+0.208333   0.54  0.41   0.20   0.11
+0.250000   0.56  0.43   0.22   0.12
+0.291667   0.57  0.44   0.24   0.14
+0.333333   0.57  0.44   0.24   0.14
+0.375000   0.58  0.45   0.25   0.15
+0.416667   0.59  0.46   0.25   0.15
+0.500000   0.59  0.46   0.26   0.16
+0.583333   0.62  0.48   0.28   0.18
+0.666667   0.62  0.49   0.28   0.18
+0.750000   0.62  0.49   0.29   0.19
+0.833333   0.63  0.50   0.30   0.19
+1.041667   0.64  0.51   0.30   0.20
+1.250000   0.63  0.50   0.29   0.19
+1.458333   0.66  0.53   0.32   0.22
+1.666667   0.65  0.52   0.31   0.21
+1.875000   0.67  0.53   0.33   0.23
+2.083333   0.66  0.53   0.32   0.22
+2.777778   0.66  0.53   0.32   0.22
+3.472222   0.67  0.54   0.33   0.23
+4.166667   0.67  0.54   0.33   0.23
+5.902778   0.67  0.53   0.33   0.23
+6.250000   0.67  0.53   0.33   0.23
+8.333333   0.67  0.53   0.33   0.23
+10.416667  0.67  0.54   0.33   0.23
+13.888889  0.67  0.54   0.33   0.23
+17.361111  0.66  0.53   0.32   0.22
+20.833333  0.67  0.54   0.33   0.23
+24.305556  0.67  0.54   0.33   0.23
+27.777778  0.67  0.54   0.33   0.23
+
+Qd =  760.0  m3/d
+r =  [17.0, 35.0, 110.0, 200.0]  m
+</pre></div></div>
+</div>
+</section>
+<section id="Showing-the-pumping-test-data-on-different-scales">
+<h3><span class="section-number">8.7.3. </span>Showing the pumping test data on different scales<a class="headerlink" href="#Showing-the-pumping-test-data-on-different-scales" title="Permalink to this headline"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drawdown vs time, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;time [d]&quot;</span><span class="p">,</span> <span class="s2">&quot;drawdown [m]&quot;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drawdown vs t/r^2, semilog, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;time [d]&quot;</span><span class="p">,</span> <span class="s2">&quot;drawdown [m]&quot;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drawdown vs t/r^2, double log, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;time [d]&quot;</span><span class="p">,</span> <span class="s2">&quot;drawdown [m]&quot;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r_</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fba7d7d5d30&gt;
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_25_1.png" src="../_images/notebooks_AssJan2016_25_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_25_2.png" src="../_images/notebooks_AssJan2016_25_2.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_25_3.png" src="../_images/notebooks_AssJan2016_25_3.png" />
+</div>
+</div>
+</section>
+<section id="Showing-the-pumping-test-data-as-a-function-of-t/r^2-instead-of-t">
+<h3><span class="section-number">8.7.4. </span>Showing the pumping test data as a function of <span class="math notranslate nohighlight">\(t/r^2\)</span> instead of <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#Showing-the-pumping-test-data-as-a-function-of-t/r^2-instead-of-t" title="Permalink to this headline"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax1</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drawdown vs time, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;t/r^2 [d/m2]&quot;</span><span class="p">,</span> <span class="s2">&quot;drawdown [m]&quot;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drawdown vs t/r^2, semilog, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;t/r^2 [d/m2]&quot;</span><span class="p">,</span> <span class="s2">&quot;drawdown [m]&quot;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drawdown vs t/r^2, double log, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;t/r^2 [d/m2]&quot;</span><span class="p">,</span> <span class="s2">&quot;drawdown [m]&quot;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r_</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fba7dea8f10&gt;
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_27_1.png" src="../_images/notebooks_AssJan2016_27_1.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_27_2.png" src="../_images/notebooks_AssJan2016_27_2.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_27_3.png" src="../_images/notebooks_AssJan2016_27_3.png" />
+</div>
+</div>
+</section>
+<section id="Working-out-the-pumping-test">
+<h3><span class="section-number">8.7.5. </span>Working out the pumping test<a class="headerlink" href="#Working-out-the-pumping-test" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>Method 1. Use the straight part of the drawdown line on half-log scales to get kD and S (later get <span class="math notranslate nohighlight">\(r/\lambda\)</span> from the horizontal portions, by trial and error.)</p></li>
+<li><p>Method 2. Match the type curves on double log scales with the measurents on double log scales.</p></li>
+</ol>
+</section>
+<section id="First-method,-use-the-straight-part-of-the-drawdown">
+<h3><span class="section-number">8.7.6. </span>First method, use the straight part of the drawdown<a class="headerlink" href="#First-method,-use-the-straight-part-of-the-drawdown" title="Permalink to this headline"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax2</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drawdown vs t, semilog, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;t [d/m2]&quot;</span><span class="p">,</span> <span class="s2">&quot;drawdown [m]&quot;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+<span class="n">t_day</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r_</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+<span class="c1"># straight line parameters estimated by trial and error and sharply looking at the graph at y(t=1) and at drawdown per log cycle</span>
+<span class="n">y0</span><span class="p">,</span> <span class="n">Ds</span> <span class="o">=</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y0</span><span class="p">,</span> <span class="n">Ds</span><span class="p">,</span> <span class="n">td</span><span class="p">:</span>  <span class="n">y0</span> <span class="o">+</span> <span class="n">Ds</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">td</span><span class="p">)</span> <span class="c1"># Straight l ine</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">Ds</span><span class="p">,</span> <span class="n">t_day</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;straigh line&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Intersectino of straight line with y=0</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="o">-</span><span class="p">(</span><span class="n">y0</span> <span class="o">/</span> <span class="n">Ds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intersection time of straight line with y=0 is </span><span class="si">{</span><span class="n">t0</span><span class="si">:</span><span class="s2">.4g</span><span class="si">}</span><span class="s2"> d&quot;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;intersetion with y=0&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extend the straight line:</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">Ds</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;extended straight line.&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Intersection time of straight line with y=0 is 0.001778 d
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fba7d81fa90&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_30_2.png" src="../_images/notebooks_AssJan2016_30_2.png" />
+</div>
+</div>
+</section>
+<section id="Results">
+<h3><span class="section-number">8.7.7. </span>Results<a class="headerlink" href="#Results" title="Permalink to this headline"></a></h3>
+<p>From these values we have</p>
+<div class="math notranslate nohighlight">
+\[Ds = \frac{Q}{4 \pi kD} \rightarrow kD = \frac{Q}{4 \pi Ds} = \frac{760}{4 \times \pi \times 0.20} \approx 696 \ \mathrm{m^2/d}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{2.25 kD t_0}{r^2 S} = 1 \rightarrow S = \frac{2.25 kD t_0}{r^2} = \frac{2.25\times 696\times 0.001778}{35 ** 2} = 0.0023\]</div>
+<p>With these values we can try a few values of the resistance <span class="math notranslate nohighlight">\(c\)</span>, and, therefore, <span class="math notranslate nohighlight">\(\lambda = \sqrt{kD c}\)</span> to estimate it.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Index([&#39;r=17&#39;, &#39;r=35&#39;, &#39;r=110&#39;, &#39;r=200&#39;], dtype=&#39;object&#39;)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kD</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span>  <span class="n">Qd</span> <span class="o">=</span> <span class="mi">696</span><span class="p">,</span> <span class="mf">0.0023</span><span class="p">,</span> <span class="mi">760</span>
+<span class="c1">#kD, S,  Qd = 660, 0.0025, 760</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Drawdown vs t, Qd=</span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d, semilog&quot;</span><span class="p">,</span> <span class="s2">&quot;t [d/m2]&quot;</span><span class="p">,</span> <span class="s2">&quot;drawdown [m]&quot;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+<span class="n">t_day</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r_</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">clr</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">700</span><span class="p">],[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span> <span class="p">]):</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t_day</span><span class="p">)</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kD</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+        <span class="n">rho</span> <span class="o">=</span> <span class="n">r_</span>  <span class="o">/</span> <span class="n">L</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">Qd</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">kD</span><span class="p">)</span> <span class="o">*</span> <span class="n">Wh</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">)</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">clr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;r=</span><span class="si">{</span><span class="n">r_</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m, c=</span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> d, \lambda=</span><span class="si">{</span><span class="n">L</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m&#39;</span> <span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+<span class="c1"># straight line parameters estimated by trial and error and sharply looking at the graph at y(t=1) and at drawdown per log cycle</span>
+<span class="n">y0</span><span class="p">,</span> <span class="n">Ds</span> <span class="o">=</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">y0</span><span class="p">,</span> <span class="n">Ds</span><span class="p">,</span> <span class="n">td</span><span class="p">:</span>  <span class="n">y0</span> <span class="o">+</span> <span class="n">Ds</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">td</span><span class="p">)</span> <span class="c1"># Straight l ine</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">Ds</span><span class="p">,</span> <span class="n">t_day</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;straigh line&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Intersectino of straight line with y=0</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="o">-</span><span class="p">(</span><span class="n">y0</span> <span class="o">/</span> <span class="n">Ds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intersection time of straight line with y=0 is </span><span class="si">{</span><span class="n">t0</span><span class="si">:</span><span class="s2">.4g</span><span class="si">}</span><span class="s2"> d&quot;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;intersetion with y=0&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extend the straight line:</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">Ds</span><span class="p">,</span> <span class="n">t</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;extended straight line.&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Intersection time of straight line with y=0 is 0.001778 d
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fba7e39ac10&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_33_2.png" src="../_images/notebooks_AssJan2016_33_2.png" />
+</div>
+</div>
+<p>As can be seen, a resistance between 600 and 700 d seems to match best. So we have</p>
+<div class="math notranslate nohighlight">
+\[kD = 695\ \mathrm{m^2/d}, S=0.0023,    c=650\ \mathrm{d}\]</div>
+</section>
+</section>
+<section id="Using-the-traditional-method,-matching-the-data-and-the-Hantush-curves-on-double-log-paper-(shifting-until-the-best-fit-is-obtained.)">
+<h2><span class="section-number">8.8. </span>Using the traditional method, matching the data and the Hantush curves on double log paper (shifting until the best fit is obtained.)<a class="headerlink" href="#Using-the-traditional-method,-matching-the-data-and-the-Hantush-curves-on-double-log-paper-(shifting-until-the-best-fit-is-obtained.)" title="Permalink to this headline"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qd</span> <span class="o">=</span> <span class="mi">760</span> <span class="c1"># m3/d</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="n">r_</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">r_</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">])</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Drawdown and matched Theis well function, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m3/d, kD=</span><span class="si">{</span><span class="n">kD</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m2/d, S=</span><span class="si">{</span><span class="n">S</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;t/r^2&#39;</span><span class="p">,</span> <span class="s1">&#39;s = A W(u, rho)&#39;</span><span class="p">,</span>
+            <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mf">2.</span><span class="p">))</span>
+
+<span class="n">t_day</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r_</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;measured, </span><span class="si">{</span><span class="n">r_</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m&#39;</span><span class="p">)</span>
+
+<span class="c1"># To be setimated by trial and error</span>
+
+<span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="mf">0.09</span><span class="p">,</span> <span class="mf">1.0e6</span> <span class="c1"># A = Q/ (4 pi kD); B = 4 kD  /S</span>
+<span class="k">for</span> <span class="n">r_</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">B</span> <span class="o">*</span> <span class="n">t_day</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">A</span> <span class="o">*</span> <span class="n">W</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="s1">&#39;k.&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Theis&#39;</span><span class="p">)</span>
+
+<span class="n">kD</span> <span class="o">=</span> <span class="n">Qd</span>  <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">A</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span>  <span class="o">/</span><span class="n">B</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;kD = </span><span class="si">{</span><span class="n">kD</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m2/d&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;S = </span><span class="si">{</span><span class="n">S</span><span class="si">:</span><span class="s1">.3g</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Drawdown and matched Hantush well function, Qd = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m3/d, kD=</span><span class="si">{</span><span class="n">kD</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m2/d, S=</span><span class="si">{</span><span class="n">S</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">, c=</span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> d&#39;</span><span class="p">,</span> <span class="s1">&#39;t/r^2&#39;</span><span class="p">,</span> <span class="s1">&#39;s = A W(u, rho)&#39;</span><span class="p">,</span>
+            <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mf">2.</span><span class="p">))</span>
+
+<span class="n">t_day</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r_</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;measured, </span><span class="si">{</span><span class="n">r_</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m&#39;</span><span class="p">)</span>
+
+<span class="c1"># To be setimated by trial and error</span>
+
+<span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="mf">0.09</span><span class="p">,</span> <span class="mf">1.0e6</span> <span class="c1"># A = Q/ (4 pi kD); B = 4 kD  /S</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">500</span> <span class="c1"># After a few trial, c seems to best match the data</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kD</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">markers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">r_</span><span class="p">,</span> <span class="n">marker</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">markers</span><span class="p">):</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">B</span> <span class="o">*</span> <span class="n">t_day</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">rho</span> <span class="o">=</span> <span class="n">r_</span> <span class="o">/</span> <span class="n">L</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_day</span> <span class="o">/</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">A</span> <span class="o">*</span> <span class="n">Wh</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">),</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Hantush, r=</span><span class="si">{</span><span class="n">r_</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+kD = 672 m2/d
+S = 0.00269
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_36_1.png" src="../_images/notebooks_AssJan2016_36_1.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_36_2.png" src="../_images/notebooks_AssJan2016_36_2.png" />
+</div>
+</div>
+<p>Conclusion; kD = m2/d, S = 0.026, c = 500 d</p>
+</section>
+<section id="Generating-test-data-for-the-pumping-test-analyses,-so-that-each-students-will-have-his/her-unique-test-data.">
+<h2><span class="section-number">8.9. </span>Generating test data for the pumping test analyses, so that each students will have his/her unique test data.<a class="headerlink" href="#Generating-test-data-for-the-pumping-test-analyses,-so-that-each-students-will-have-his/her-unique-test-data." title="Permalink to this headline"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">exp1</span> <span class="k">as</span> <span class="n">W</span> <span class="c1"># Theis well Function</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">quad</span>
+
+<span class="k">def</span> <span class="nf">Wh</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return Hantush well function by integration using scipy functinality.</span>
+
+<span class="sd">    This is efficient and accurate to 1e-9, which the other direct integration</span>
+<span class="sd">    methods don&#39;t achieve, even with 5000 points.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">y</span> <span class="o">-</span> <span class="p">(</span><span class="n">rho</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">y</span> <span class="p">)</span> <span class="o">/</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">w</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span> <span class="k">return</span> <span class="n">quad</span><span class="p">(</span><span class="n">kernel</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">rho</span><span class="p">))</span>
+
+    <span class="n">wh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frompyfunc</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 2 inputs and tow outputs h and err</span>
+
+    <span class="k">return</span> <span class="n">wh</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">rho</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># cut-off err</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># True values to be determined (may  be the same fer every sutdent)</span>
+<span class="n">Q</span><span class="p">,</span> <span class="n">kD</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">760</span><span class="p">,</span> <span class="mf">660.</span><span class="p">,</span> <span class="mf">0.0025</span><span class="p">,</span> <span class="mf">500.</span> <span class="c1"># m3/d, m2/d, (-), d</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kD</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># Observation well distances, unique for every student.</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">17.</span><span class="p">,</span> <span class="mf">35.</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mf">200.</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s1">&#39;Hantush well function&#39;</span><span class="p">,</span> <span class="s1">&#39;1/u&#39;</span><span class="p">,</span> <span class="s1">&#39;W(u, rho)&#39;</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+
+<span class="c1"># A nice set of measuring times, like one would have in practice [minuts after start of pump]</span>
+<span class="n">t_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">420</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span>
+                  <span class="mi">540</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">720</span><span class="p">,</span> <span class="mi">840</span><span class="p">,</span> <span class="mi">960</span><span class="p">,</span> <span class="mi">1080</span><span class="p">,</span> <span class="mi">1200</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mi">2100</span><span class="p">,</span> <span class="mi">2400</span><span class="p">,</span> <span class="mi">2700</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span>
+                  <span class="mi">4000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">8500</span><span class="p">,</span> <span class="mi">9000</span><span class="p">,</span> <span class="mi">12000</span><span class="p">,</span> <span class="mi">15000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">25000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">,</span> <span class="mi">35000</span><span class="p">,</span>
+                  <span class="mi">40000</span><span class="p">])</span>
+
+<span class="n">t_day</span> <span class="o">=</span> <span class="n">t_min</span> <span class="o">/</span> <span class="p">(</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># Random measurement errors</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">0.005</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_day</span><span class="p">))</span>
+
+<span class="c1"># Data array to be filled. We put time in minutes in first column</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">t_min</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span>
+               <span class="n">Q</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">t_min</span><span class="p">),</span> <span class="mi">1</span><span class="p">)),</span>
+               <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_day</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)))</span> <span class="p">))</span>
+
+<span class="c1"># Fill the matrix</span>
+<span class="k">for</span> <span class="n">ir</span><span class="p">,</span> <span class="n">r_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">r_</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t_day</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">Q</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">kD</span><span class="p">)</span> <span class="o">*</span> <span class="n">Wh</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">r_</span><span class="o">/</span><span class="n">L</span><span class="p">)</span> <span class="o">+</span> <span class="n">e</span>
+    <span class="n">A</span><span class="p">[:,</span> <span class="n">ir</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">r_</span><span class="o">/</span><span class="n">L</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">A</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:],</span> <span class="mi">2</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">A</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">([</span><span class="s1">&#39;Q_m3/d&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;r=</span><span class="si">{</span><span class="n">r_</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">r_</span> <span class="ow">in</span> <span class="n">r</span><span class="p">]))</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;t_min&#39;</span><span class="p">,</span>
+
+<span class="n">data</span>
+
+<span class="c1"># You can save the data to an excel file a csv file or a text file whatever you like.</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Q_m3/d</th>
+      <th>r=17</th>
+      <th>r=35</th>
+      <th>r=110</th>
+      <th>r=200</th>
+    </tr>
+    <tr>
+      <th>(t_min,)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10.0</th>
+      <td>760.0</td>
+      <td>0.25</td>
+      <td>0.13</td>
+      <td>0.01</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>20.0</th>
+      <td>760.0</td>
+      <td>0.31</td>
+      <td>0.19</td>
+      <td>0.03</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>30.0</th>
+      <td>760.0</td>
+      <td>0.34</td>
+      <td>0.21</td>
+      <td>0.04</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>40.0</th>
+      <td>760.0</td>
+      <td>0.37</td>
+      <td>0.24</td>
+      <td>0.06</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>50.0</th>
+      <td>760.0</td>
+      <td>0.38</td>
+      <td>0.25</td>
+      <td>0.07</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <th>60.0</th>
+      <td>760.0</td>
+      <td>0.41</td>
+      <td>0.28</td>
+      <td>0.10</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>75.0</th>
+      <td>760.0</td>
+      <td>0.43</td>
+      <td>0.30</td>
+      <td>0.11</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>90.0</th>
+      <td>760.0</td>
+      <td>0.44</td>
+      <td>0.30</td>
+      <td>0.11</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <th>105.0</th>
+      <td>760.0</td>
+      <td>0.47</td>
+      <td>0.33</td>
+      <td>0.14</td>
+      <td>0.06</td>
+    </tr>
+    <tr>
+      <th>120.0</th>
+      <td>760.0</td>
+      <td>0.47</td>
+      <td>0.34</td>
+      <td>0.14</td>
+      <td>0.06</td>
+    </tr>
+    <tr>
+      <th>180.0</th>
+      <td>760.0</td>
+      <td>0.49</td>
+      <td>0.36</td>
+      <td>0.16</td>
+      <td>0.07</td>
+    </tr>
+    <tr>
+      <th>240.0</th>
+      <td>760.0</td>
+      <td>0.52</td>
+      <td>0.39</td>
+      <td>0.19</td>
+      <td>0.09</td>
+    </tr>
+    <tr>
+      <th>300.0</th>
+      <td>760.0</td>
+      <td>0.54</td>
+      <td>0.41</td>
+      <td>0.21</td>
+      <td>0.11</td>
+    </tr>
+    <tr>
+      <th>360.0</th>
+      <td>760.0</td>
+      <td>0.55</td>
+      <td>0.42</td>
+      <td>0.22</td>
+      <td>0.12</td>
+    </tr>
+    <tr>
+      <th>420.0</th>
+      <td>760.0</td>
+      <td>0.57</td>
+      <td>0.44</td>
+      <td>0.23</td>
+      <td>0.14</td>
+    </tr>
+    <tr>
+      <th>480.0</th>
+      <td>760.0</td>
+      <td>0.57</td>
+      <td>0.43</td>
+      <td>0.23</td>
+      <td>0.13</td>
+    </tr>
+    <tr>
+      <th>540.0</th>
+      <td>760.0</td>
+      <td>0.59</td>
+      <td>0.46</td>
+      <td>0.25</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>600.0</th>
+      <td>760.0</td>
+      <td>0.60</td>
+      <td>0.47</td>
+      <td>0.26</td>
+      <td>0.16</td>
+    </tr>
+    <tr>
+      <th>720.0</th>
+      <td>760.0</td>
+      <td>0.60</td>
+      <td>0.47</td>
+      <td>0.26</td>
+      <td>0.16</td>
+    </tr>
+    <tr>
+      <th>840.0</th>
+      <td>760.0</td>
+      <td>0.61</td>
+      <td>0.48</td>
+      <td>0.27</td>
+      <td>0.17</td>
+    </tr>
+    <tr>
+      <th>960.0</th>
+      <td>760.0</td>
+      <td>0.62</td>
+      <td>0.49</td>
+      <td>0.29</td>
+      <td>0.19</td>
+    </tr>
+    <tr>
+      <th>1080.0</th>
+      <td>760.0</td>
+      <td>0.64</td>
+      <td>0.51</td>
+      <td>0.30</td>
+      <td>0.20</td>
+    </tr>
+    <tr>
+      <th>1200.0</th>
+      <td>760.0</td>
+      <td>0.63</td>
+      <td>0.50</td>
+      <td>0.29</td>
+      <td>0.19</td>
+    </tr>
+    <tr>
+      <th>1500.0</th>
+      <td>760.0</td>
+      <td>0.64</td>
+      <td>0.50</td>
+      <td>0.30</td>
+      <td>0.20</td>
+    </tr>
+    <tr>
+      <th>1800.0</th>
+      <td>760.0</td>
+      <td>0.64</td>
+      <td>0.51</td>
+      <td>0.30</td>
+      <td>0.20</td>
+    </tr>
+    <tr>
+      <th>2100.0</th>
+      <td>760.0</td>
+      <td>0.65</td>
+      <td>0.52</td>
+      <td>0.32</td>
+      <td>0.21</td>
+    </tr>
+    <tr>
+      <th>2400.0</th>
+      <td>760.0</td>
+      <td>0.65</td>
+      <td>0.52</td>
+      <td>0.31</td>
+      <td>0.21</td>
+    </tr>
+    <tr>
+      <th>2700.0</th>
+      <td>760.0</td>
+      <td>0.66</td>
+      <td>0.53</td>
+      <td>0.33</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>3000.0</th>
+      <td>760.0</td>
+      <td>0.66</td>
+      <td>0.53</td>
+      <td>0.33</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>4000.0</th>
+      <td>760.0</td>
+      <td>0.67</td>
+      <td>0.54</td>
+      <td>0.33</td>
+      <td>0.23</td>
+    </tr>
+    <tr>
+      <th>5000.0</th>
+      <td>760.0</td>
+      <td>0.68</td>
+      <td>0.54</td>
+      <td>0.34</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>6000.0</th>
+      <td>760.0</td>
+      <td>0.66</td>
+      <td>0.53</td>
+      <td>0.32</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>8500.0</th>
+      <td>760.0</td>
+      <td>0.66</td>
+      <td>0.53</td>
+      <td>0.32</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>9000.0</th>
+      <td>760.0</td>
+      <td>0.66</td>
+      <td>0.53</td>
+      <td>0.33</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>12000.0</th>
+      <td>760.0</td>
+      <td>0.67</td>
+      <td>0.53</td>
+      <td>0.33</td>
+      <td>0.23</td>
+    </tr>
+    <tr>
+      <th>15000.0</th>
+      <td>760.0</td>
+      <td>0.67</td>
+      <td>0.54</td>
+      <td>0.33</td>
+      <td>0.23</td>
+    </tr>
+    <tr>
+      <th>20000.0</th>
+      <td>760.0</td>
+      <td>0.66</td>
+      <td>0.53</td>
+      <td>0.32</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>25000.0</th>
+      <td>760.0</td>
+      <td>0.67</td>
+      <td>0.54</td>
+      <td>0.33</td>
+      <td>0.23</td>
+    </tr>
+    <tr>
+      <th>30000.0</th>
+      <td>760.0</td>
+      <td>0.67</td>
+      <td>0.54</td>
+      <td>0.33</td>
+      <td>0.23</td>
+    </tr>
+    <tr>
+      <th>35000.0</th>
+      <td>760.0</td>
+      <td>0.67</td>
+      <td>0.54</td>
+      <td>0.33</td>
+      <td>0.23</td>
+    </tr>
+    <tr>
+      <th>40000.0</th>
+      <td>760.0</td>
+      <td>0.67</td>
+      <td>0.54</td>
+      <td>0.33</td>
+      <td>0.23</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2016_40_1.png" src="../_images/notebooks_AssJan2016_40_1.png" />
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="AssJan2017.html" class="btn btn-neutral float-left" title="7. Assignment Jan 2017 preventing extraction from river" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Techniques.html" class="btn btn-neutral float-right" title="9. Some python techniques useful for your assignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Theo N. Olsthoorn.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta property="article:modified_time" content="2022-06-07T23:53:42+02:00" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. Assignment Jan 2017 preventing extraction from river &mdash; Assignments Transient 0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="8. Assignment Jan 2016. Several exercises based on the syllabus" href="AssJan2016.html" />
+    <link rel="prev" title="6. Assignment Jan 2019. A building pit next to a river" href="AssJan2019.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Assignments Transient
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../old_assignments.html">1. Previous Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssWithAnswers.html">2. Assignment 2016 2022 with answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2022.html">3. Assignment Jan 2022. Wells along a river</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2021.html">4. Assignment Jan 2021. Wells along a river in a closed valley</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2020.html">5. Assigment Jan 2020</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2019.html">6. Assignment Jan 2019. A building pit next to a river</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Assignment Jan 2017 preventing extraction from river</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Problem-statement:-water-company-uses-ASR-system-to-prevent-extraction-from-river-during-summer">7.1. Problem statement: water company uses ASR system to prevent extraction from river during summer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Hints-and-further-information:">7.1.1. Hints and further information:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Steps-to-take:">7.1.2. Steps to take:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Suggestions:">7.1.3. Suggestions:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#First-show-the-heads-and-the-specific-discharge-to-gain-overview">7.2. First show the heads and the specific discharge to gain overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Compute-the-infiltration-from-the-river-if-the-extration-were-continuous-after-t=0">7.3. Compute the infiltration from the river if the extration were continuous after <span class="math notranslate nohighlight">\(t=0\)</span></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Simulating-the-actual-flow-regime,-with-winter-injection-and-summer-extraction.">7.4. Simulating the actual flow regime, with winter injection and summer extraction.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Set-up-the-regime">7.4.1. Set up the regime</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Conclusion">7.5. Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="AssJan2016.html">8. Assignment Jan 2016. Several exercises based on the syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Techniques.html">9. Some python techniques useful for your assignment</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Assignments Transient</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">7. </span>Assignment Jan 2017 preventing extraction from river</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Assignment-Jan-2017-preventing-extraction-from-river">
+<h1><span class="section-number">7. </span>Assignment Jan 2017 preventing extraction from river<a class="headerlink" href="#Assignment-Jan-2017-preventing-extraction-from-river" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">author</dt>
+<dd class="field-odd"><p>T.N.Olsthoorn, Jan 2017, updated Jun 2022</p>
+</dd>
+</dl>
+<section id="Problem-statement:-water-company-uses-ASR-system-to-prevent-extraction-from-river-during-summer">
+<h2><span class="section-number">7.1. </span>Problem statement: water company uses ASR system to prevent extraction from river during summer<a class="headerlink" href="#Problem-statement:-water-company-uses-ASR-system-to-prevent-extraction-from-river-during-summer" title="Permalink to this headline"></a></h2>
+<p>A water company extracts water from a small river to treat and distribute it as drinking water for the population of a small town nearby. This is not a problem in winter. However, due to growing demand for drinking water and growing environmental concern, extraction has become more and more problematic during summers when the discharge of this small river is at its lowest. The environmental agency has recently even forbidden to further extract water from the river during the summer months.</p>
+<img alt="Situation sketch" src="../_images/AssJan2018_1.png" />
+<p>In order to solve the problem that this causes for the drinking water supply, the drinking water company has suggested an “Aquifer Storage and Recovery” system (these so-called ASR systems are becoming more and more popular). It wants to take in more river water during winter and inject it through a well (or wells) at some distance from the river into the local water-table aquifer, so that this water can be extracted during the next summer. This way, no water-intake will be necessary during the
+summer months.</p>
+<p>The debate that took off between the water company and the environmental agency focuses on whether, or to what extent, this ASR system could really makes sense, i.e. could really prevent infiltratioin from the river during the summer season. The question to be aswered is this: Can you really store the water in winter and extract it during summer without substantially affecting the already low summer-discharge of the river? Will not much of the stored water flow back to the river through the
+aquifer during winter? And would the extraction not induce an infiltration from the river into the aquifer during summer, so that there is still a water intake, the only differece now being that it will be invisible?</p>
+<p>It’s your task as hydrologist of the environmental agency to answer this question and illustrate it quantitatively and also explain it clearly. Your explanation should include why and how you derived your answer. It should show the math and the code.</p>
+<p>It is obvious that ASR will work if the distance between the well and the river is large enough. But how large is large enough, and on what does it depend? The water company suggested a distance of 500 m from the river. Should the environmental agency agree?</p>
+<section id="Hints-and-further-information:">
+<h3><span class="section-number">7.1.1. </span>Hints and further information:<a class="headerlink" href="#Hints-and-further-information:" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>To analyse this system, at least coarsely, simplify the injection and extraction regime and apply superposition. Superposition allows to only consider the well and treat the river as a fixed-head boundary using a mirror well. Simplify the river to a straight line along the y-axis and place the well at distance <span class="math notranslate nohighlight">\(x_w\)</span> from this line at coordinate <span class="math notranslate nohighlight">\((x_w, 0)\)</span>. That is, the x-axis is perpendicular to the river.</p></li>
+<li><p>The drinking water demand, <span class="math notranslate nohighlight">\(Q\)</span>, is considered constant year-round at 150 L/d per inhabitant for the 10000 inhabitants of the town.</p></li>
+<li><p>Assume the following injection and recovery regime:</p>
+<ol class="arabic simple">
+<li><p>The water company well extracts during 3 summer months (June, July, Aug) its full demand</p></li>
+<li><p>It compensates that during 6 winter months (October-March) by injecting half its daily capacity.</p></li>
+<li><p>There is neither injection nor extraction during the months April, May and September.</p></li>
+</ol>
+</li>
+<li><p>The idea is to analyse this ASR system by computing the exchange between the aquifer and the river due to the well.</p></li>
+<li><p>When you have coded the problem for this particular distance of 500 m, experiment with this distance to come up with a distance that realy makes sense in terms of not inducing loss of river water during the summer months. That is, try 1000 and 2000 m.</p></li>
+<li><p>Use kD = 900 m2/d, S = 0.2</p></li>
+</ol>
+</section>
+<section id="Steps-to-take:">
+<h3><span class="section-number">7.1.2. </span>Steps to take:<a class="headerlink" href="#Steps-to-take:" title="Permalink to this headline"></a></h3>
+<ol class="arabic">
+<li><p>Use Theis’ well function to compute drawdowns:</p>
+<div class="math notranslate nohighlight">
+\[s(t, t) =\frac  Q {4 \pi kD} W(u), \,\,\,\,\ W(u) =  -scipy.special.expi(-u),\,\,\,\,\, u \frac {r^2 S} {4 kD t}\]</div>
+</li>
+<li><p>From Theis’ well function</p>
+<div class="math notranslate nohighlight">
+\[W(u) = \intop_u^\infty \frac {e^{-y}} y dy\]</div>
+<p>derive the flow <span class="math notranslate nohighlight">\(Q(r, t)\)</span> [L3/T] and the specific discharge <span class="math notranslate nohighlight">\(q(r,t)\)</span> [L2/T] in the aquifer at distance <span class="math notranslate nohighlight">\(r\)</span> from the well.</p>
+</li>
+<li><p>To simulate the river, apply a mirror well.</p></li>
+<li><p>Compute the exchange between aquifer and river, derive the specific discharge <span class="math notranslate nohighlight">\(q\)</span> [L2/T] perpendicular to the river at an arbitrary point <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p>Compute this specific discharge for a large number of points between <span class="math notranslate nohighlight">\(-a x_w&lt;y&lt;a x_w\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is sufficiently large, thus covering a large enough track of the river to capture about the full induced exchange between aquifer and the river.</p>
+<p>Generating appropriate y-coordinates this way, can be done as follows:</p>
+<p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">np.hstack((</span> <span class="pre">-np.logspace(0,</span> <span class="pre">np.log10(a</span> <span class="pre">*</span> <span class="pre">xw),</span> <span class="pre">Np)[::-1],</span> <span class="pre">np.logspace(0,</span> <span class="pre">np.log10(a</span> <span class="pre">*</span> <span class="pre">xw),</span> <span class="pre">Np))</span></code></p>
+<p>Where <span class="math notranslate nohighlight">\(a\)</span> may be taken 10 and <span class="math notranslate nohighlight">\(Np\)</span> 500 for example.</p>
+</li>
+<li><div class="line-block">
+<div class="line">Numerically integrate this specific discharge along the river to obtain the total exchange between river and aquifer.</div>
+<div class="line">&gt;Numerical integration is easy when uing the Simpson rule (trapezium rule).</div>
+</div>
+</li>
+<li><p>Having the code to do this for a single time, it can readily be extended for a large number of times.</p></li>
+<li><p>Check that for large times, the total flow between aquifer and river should be about the total discharge of the well if the well is continuously injecting.</p></li>
+<li><p>Finally simulate the actual flow regime with 6 month injection and 3 months extraction as explained above. Simulate for a period of 5 years. This simulation requires superposition in time.</p></li>
+</ol>
+</section>
+<section id="Suggestions:">
+<h3><span class="section-number">7.1.3. </span>Suggestions:<a class="headerlink" href="#Suggestions:" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>It’s probably easiest to analyze everything in time units of months instead of days, 5 years time then runs from 0 to 60 months.</p></li>
+<li><p>Learn to define and use functions in Python to keep overview and prevent repeating code.</p></li>
+<li><p>If you consider this too complicated, then anlyse at least the situation for only the river point closest to the well.</p></li>
+<li><p>Start by plotting the head.</p></li>
+<li><p>When this works focus on the discharge.</p></li>
+<li><p>Don’t hesitate to ask questions and for help.</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the necessary fucntionality</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">exp1</span> <span class="k">as</span> <span class="n">W</span> <span class="c1"># Theis well function</span>
+
+<span class="k">def</span> <span class="nf">newfig</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">xscale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yscale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;xx-small&#39;</span><span class="p">,</span> <span class="s1">&#39;x-small&#39;</span><span class="p">,</span> <span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="s1">&#39;x-large&#39;</span><span class="p">,</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">]</span>
+
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fontsize</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">fontsize</span> <span class="ow">in</span> <span class="n">sizes</span><span class="p">,</span> \
+        <span class="s2">&quot;fontsize not int and not in [</span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sizes</span><span class="p">))</span>
+
+    <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xlim</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ylim</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">xscale</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="n">xscale</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">yscale</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="n">yscale</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="p">]</span> <span class="o">+</span>
+             <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">()):</span>
+        <span class="n">item</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ax</span>
+
+<span class="k">def</span> <span class="nf">newfigs</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">titles</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;?&#39;</span><span class="p">],</span> <span class="n">xlabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;?&#39;</span><span class="p">],</span> <span class="n">ylabels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;?&#39;</span><span class="p">],</span> <span class="n">xscales</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yscales</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">xlim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)):</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;xx-small&#39;</span><span class="p">,</span> <span class="s1">&#39;x-small&#39;</span><span class="p">,</span> <span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="s1">&#39;x-large&#39;</span><span class="p">,</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">]</span>
+
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fontsize</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">fontsize</span> <span class="ow">in</span> <span class="n">sizes</span><span class="p">,</span> \
+        <span class="s2">&quot;fontsize not int and not in [</span><span class="si">{}</span><span class="s2">]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sizes</span><span class="p">))</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="o">*</span><span class="n">layout</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="n">sharex</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="n">sharey</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="n">figsize</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;layout must be a 2-tuple (nrows, ncols) not </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">layout</span><span class="p">))</span>
+    <span class="n">n_axes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">xscales</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">xscales</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_axes</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">yscales</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">yscales</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_axes</span><span class="p">)]</span>
+
+    <span class="k">for</span> <span class="n">items_name</span><span class="p">,</span> <span class="n">items</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;titles&#39;</span><span class="p">,</span> <span class="s1">&#39;xlabels&#39;</span><span class="p">,</span> <span class="s1">&#39;ylabels&#39;</span><span class="p">,</span> <span class="s1">&#39;xscales&#39;</span><span class="p">,</span> <span class="s1">&#39;yscales&#39;</span><span class="p">],</span> <span class="p">[</span><span class="n">titles</span><span class="p">,</span> <span class="n">xlabels</span><span class="p">,</span> <span class="n">ylabels</span><span class="p">,</span> <span class="n">xscales</span><span class="p">,</span> <span class="n">yscales</span><span class="p">]):</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">layout</span><span class="p">),</span> <span class="s1">&#39;len(</span><span class="si">{}</span><span class="s1">) == </span><span class="si">{}</span><span class="s1"> != len(layout) == </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">items_name</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">layout</span><span class="p">)))</span>
+
+    <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">xscale</span><span class="p">,</span> <span class="n">yscale</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="p">,</span> <span class="n">titles</span><span class="p">,</span> <span class="n">xlabels</span><span class="p">,</span> <span class="n">ylabels</span><span class="p">,</span> <span class="n">xscales</span><span class="p">,</span> <span class="n">yscales</span><span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">xlim</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ylim</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">ylim</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">xscale</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="n">xscale</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">yscale</span><span class="p">:</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="n">yscale</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="p">]</span> <span class="o">+</span>
+                 <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()</span> <span class="o">+</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">()):</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">set_fontsize</span><span class="p">(</span><span class="n">fontsize</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">axs</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="kc">None</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[None, None, None, None, None]
+</pre></div></div>
+</div>
+<p>Because the river is regarded as a straight fixed-head boundary along the y-axis at x=0, it can be simulated using a well and a mirror wel. The well is at <code class="docutils literal notranslate"><span class="pre">(-xw,</span> <span class="pre">0)</span></code> and the mirror well ast `(xw, 0)</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[195]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># aquifer</span>
+<span class="n">kD</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">Qd</span> <span class="o">=</span> <span class="mf">900.</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.15</span> <span class="o">*</span> <span class="mi">1000</span> <span class="c1"># m2/d, (-), m3/d</span>
+
+<span class="n">show_times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">1060</span><span class="p">,</span> <span class="mi">2120</span><span class="p">,</span> <span class="mi">4240</span><span class="p">]</span>
+
+<span class="c1"># Coordinates</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">500.</span>
+<span class="n">wells</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="o">+</span><span class="n">L</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span><span class="o">-</span><span class="n">Qd</span><span class="p">},</span>
+         <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span><span class="o">+</span><span class="n">Qd</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">a</span>  <span class="o">=</span> <span class="mf">25.</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="First-show-the-heads-and-the-specific-discharge-to-gain-overview">
+<h2><span class="section-number">7.2. </span>First show the heads and the specific discharge to gain overview<a class="headerlink" href="#First-show-the-heads-and-the-specific-discharge-to-gain-overview" title="Permalink to this headline"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[196]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">show_times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Head contours and stream vectors at t = </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> d&#39;</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">]</span>
+<span class="n">xlabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x [m]&#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">]</span>
+<span class="n">ylabels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;y [m[&#39;</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">]</span>
+
+<span class="n">axs</span> <span class="o">=</span> <span class="n">newfigs</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">titles</span><span class="p">,</span> <span class="n">xlabels</span><span class="p">,</span> <span class="n">ylabels</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">show_times</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">wells</span><span class="p">:</span>
+        <span class="n">well</span> <span class="o">=</span> <span class="n">wells</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">r2</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">r2</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">kD</span><span class="p">)</span> <span class="o">*</span> <span class="n">W</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">cs</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Quiver plot to show the flow field</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Stream vextors at t = </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> d&#39;</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">]</span>
+<span class="n">axs</span> <span class="o">=</span> <span class="n">newfigs</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">titles</span><span class="p">,</span> <span class="n">xlabels</span><span class="p">,</span> <span class="n">ylabels</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">xq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="n">yq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">Xq</span><span class="p">,</span> <span class="n">Yq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xq</span><span class="p">,</span> <span class="n">yq</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axs</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">show_times</span><span class="p">):</span>
+    <span class="n">qx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Xq</span><span class="p">)</span>
+    <span class="n">qy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Yq</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">wells</span><span class="p">:</span>
+        <span class="n">well</span> <span class="o">=</span> <span class="n">wells</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">r2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Xq</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">Yq</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">r2</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">qx</span> <span class="o">+=</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Xq</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">r2</span>
+        <span class="n">qy</span> <span class="o">+=</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Yq</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">r2</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">Xq</span><span class="p">,</span> <span class="n">Yq</span><span class="p">,</span> <span class="n">qx</span><span class="p">,</span> <span class="n">qy</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2017_7_0.png" src="../_images/notebooks_AssJan2017_7_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2017_7_1.png" src="../_images/notebooks_AssJan2017_7_1.png" />
+</div>
+</div>
+</section>
+<section id="Compute-the-infiltration-from-the-river-if-the-extration-were-continuous-after-t=0">
+<h2><span class="section-number">7.3. </span>Compute the infiltration from the river if the extration were continuous after <span class="math notranslate nohighlight">\(t=0\)</span><a class="headerlink" href="#Compute-the-infiltration-from-the-river-if-the-extration-were-continuous-after-t=0" title="Permalink to this headline"></a></h2>
+<div class="math notranslate nohighlight">
+\[Q_{r,t} = Q_0 \, e^{-u}\text{, where }u=\frac{r^2 S}{4 kD t}\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[q_{r,t} = \frac{Q_0}{2 \pi r} \, e^{-u}\text{, where }u=\frac{r^2 S}{4 kD t}\]</div>
+<p>Separating out the components in x- and y-direction:</p>
+<div class="math notranslate nohighlight">
+\[q_x(x, y,t) = \frac{Q_0}{2 \pi r} \, e^{-u} \cos(\alpha)\]</div>
+<div class="math notranslate nohighlight">
+\[q_y(x, y,t) = \frac{Q_0}{2 \pi r} \, e^{-u} \sin(\alpha)\]</div>
+<p>And, with <span class="math notranslate nohighlight">\(Q &lt; 0\)</span> meaning extration, the specific discharge due to a single well becomes</p>
+<div class="math notranslate nohighlight">
+\[q_x(x, y,t) = -\frac{Q_0}{2 \pi} \frac{x - x_w}{r^2}\,e^{-u}\]</div>
+<div class="math notranslate nohighlight">
+\[q_y(x, y,t) = -\frac{Q_0}{2 \pi} \frac{y - y_w}{r^2}\,e^{-u}\]</div>
+<p>Let the river coincide with the y axis and x=0.</p>
+<p>Then we generate points along the river where we’ll comopute the exchange between river and aquifer.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[197]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">15</span> <span class="c1"># (-), a scale factor for y-coordinates, further no meaning.</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">L</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">L</span><span class="p">))))</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Inflow from the river due to well at x=</span><span class="si">{</span><span class="n">L</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m, Qd=</span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;qx = m2/d&quot;</span><span class="p">,</span> <span class="s2">&quot;y [m]&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">show_times</span><span class="p">:</span>
+    <span class="n">qx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+    <span class="n">qy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">wells</span><span class="p">:</span>
+        <span class="n">well</span> <span class="o">=</span> <span class="n">wells</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">R2</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">qx</span> <span class="o">+=</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">R2</span> <span class="o">*</span>  <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span>
+        <span class="n">qy</span> <span class="o">+=</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">R2</span> <span class="o">*</span>  <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">qx</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[197]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fc5f28be340&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2017_9_1.png" src="../_images/notebooks_AssJan2017_9_1.png" />
+</div>
+</div>
+<p>The next step is to integrate the flow along the river. We do that numerically. One can use the function quad() or just apply the Simpson rule by hand.</p>
+<p>Using both quad and the hand method to compute:</p>
+<div class="math notranslate nohighlight">
+\[Q_{0,y} = \intop_{-\infty}^{+\infty} q_x dy\]</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[198]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total inflow from the river due to well at x=</span><span class="si">{</span><span class="n">L</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m, Qd=</span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> m3/d&quot;</span><span class="p">,</span> <span class="s2">&quot;time [d]&quot;</span><span class="p">,</span> <span class="s2">&quot;Q_total [m3/d]&quot;</span><span class="p">)</span>
+
+<span class="n">dy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4001</span><span class="p">,</span> <span class="mf">10.</span><span class="p">)</span>
+<span class="n">Qrin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">it</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">times</span><span class="p">):</span>
+    <span class="n">qx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+    <span class="n">qy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Y</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">wells</span><span class="p">:</span>
+        <span class="n">well</span> <span class="o">=</span> <span class="n">wells</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">R2</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">R2</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+        <span class="n">qx</span> <span class="o">+=</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">R2</span> <span class="o">*</span>  <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span>
+        <span class="n">qy</span> <span class="o">+=</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">R2</span> <span class="o">*</span>  <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span>
+    <span class="n">Qrin</span><span class="p">[</span><span class="n">it</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">qx</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">qx</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">*</span> <span class="n">dy</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">Qrin</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;well extraction = </span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m3/d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">([</span><span class="n">Qd</span><span class="p">],</span> <span class="n">xmin</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="n">times</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Qd=</span><span class="si">{</span><span class="n">Qd</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> m3/d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/var/folders/90/m51x_b713y561gzh2kzy18d00000gq/T/ipykernel_26905/3237411529.py:13: RuntimeWarning: divide by zero encountered in true_divide
+  u = R2 * S / (4 * kD * t)
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[198]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;matplotlib.legend.Legend at 0x7fc5f15cb970&gt;
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2017_11_2.png" src="../_images/notebooks_AssJan2017_11_2.png" />
+</div>
+</div>
+</section>
+<section id="Simulating-the-actual-flow-regime,-with-winter-injection-and-summer-extraction.">
+<h2><span class="section-number">7.4. </span>Simulating the actual flow regime, with winter injection and summer extraction.<a class="headerlink" href="#Simulating-the-actual-flow-regime,-with-winter-injection-and-summer-extraction." title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>The infiltration into the aquifer is -0.5Q from Oct to Mar, i.e during 6 month every year.</p></li>
+<li><p>The groundwater extraction is equals <span class="math notranslate nohighlight">\(Q\)</span> from Jun to Aug, .e. during 3 months every year.</p></li>
+</ol>
+<p>We may set up a monthly regime, telling the fraction of the total drinking water capacity that is extracted (negative values) or injected (just positive values) every month.</p>
+<section id="Set-up-the-regime">
+<h3><span class="section-number">7.4.1. </span>Set up the regime<a class="headerlink" href="#Set-up-the-regime" title="Permalink to this headline"></a></h3>
+<p>The regime is repeated 5 times to cover the required simulation period of 5 years.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[239]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ny</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1"># Number of simulation years</span>
+
+<span class="n">regime</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span> <span class="c1"># Hold the regime (startdates and corresponding flow of the well)</span>
+
+<span class="n">yyyy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">2024</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">mm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">Ny</span><span class="p">),</span>  <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">regime</span><span class="p">[</span><span class="s1">&#39;dates&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s1">04d</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">02d</span><span class="si">}</span><span class="s1">-01&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">yyyy</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">mm</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">ravel</span><span class="p">())])</span>
+<span class="n">regime</span><span class="p">[</span><span class="s1">&#39;Qw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wells</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Ny</span> <span class="o">*</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">1</span><span class="p">,</span>   <span class="mi">1</span><span class="p">,</span>   <span class="mi">1</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">])</span>  <span class="c1"># m3/d in each month</span>
+
+<span class="c1"># Let&#39;s set dQ separtely for well and mirror</span>
+<span class="n">regime</span><span class="p">[</span><span class="s1">&#39;dQw&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="mf">0.</span><span class="p">,</span> <span class="n">regime</span><span class="p">[</span><span class="s1">&#39;Qw&#39;</span><span class="p">])))</span>  <span class="c1"># The chage of flow every month needed for superpostioin.</span>
+<span class="n">regime</span>
+
+<span class="c1"># We may filter out only the months when the regime change differs from zero</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">regime</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">regime</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">regime</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">regime</span><span class="p">[</span><span class="s1">&#39;dQw&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">regime</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[239]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;dates&#39;: array([&#39;2018-01-01&#39;, &#39;2018-04-01&#39;, &#39;2018-06-01&#39;, &#39;2018-09-01&#39;,
+        &#39;2018-10-01&#39;, &#39;2019-04-01&#39;, &#39;2019-06-01&#39;, &#39;2019-09-01&#39;,
+        &#39;2019-10-01&#39;, &#39;2020-04-01&#39;, &#39;2020-06-01&#39;, &#39;2020-09-01&#39;,
+        &#39;2020-10-01&#39;, &#39;2021-04-01&#39;, &#39;2021-06-01&#39;, &#39;2021-09-01&#39;,
+        &#39;2021-10-01&#39;, &#39;2022-04-01&#39;, &#39;2022-06-01&#39;, &#39;2022-09-01&#39;,
+        &#39;2022-10-01&#39;], dtype=&#39;datetime64[D]&#39;),
+ &#39;Qw&#39;: array([  75.,   -0., -150.,   -0.,   75.,   -0., -150.,   -0.,   75.,
+          -0., -150.,   -0.,   75.,   -0., -150.,   -0.,   75.,   -0.,
+        -150.,   -0.,   75.]),
+ &#39;dQw&#39;: array([  75.,  -75., -150.,  150.,   75.,  -75., -150.,  150.,   75.,
+         -75., -150.,  150.,   75.,  -75., -150.,  150.,   75.,  -75.,
+        -150.,  150.,   75.])}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[200]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulation ties as true dates over the simulation period (days)</span>
+<span class="n">tsim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">regime</span><span class="p">[</span><span class="s1">&#39;dates&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">yyyy</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="si">:</span><span class="s1">04d</span><span class="si">}</span><span class="s1">-01-01&#39;</span><span class="p">))</span>
+<span class="n">tsim</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[200]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([&#39;2018-01-01&#39;, &#39;2018-01-02&#39;, &#39;2018-01-03&#39;, ..., &#39;2023-12-29&#39;,
+       &#39;2023-12-30&#39;, &#39;2023-12-31&#39;], dtype=&#39;datetime64[D]&#39;)
+</pre></div></div>
+</div>
+<p>Now simulate the pumping regime by superposition</p>
+<p>Flow changes need to be suerimposed:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[256]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carry out superposition in time</span>
+
+<span class="c1"># Coordinates</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mf">1500.</span>
+<span class="n">wells</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="o">+</span><span class="n">L</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span><span class="o">-</span><span class="n">Qd</span><span class="p">},</span>
+         <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">:</span><span class="o">+</span><span class="n">Qd</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">L</span> <span class="o">*</span> <span class="n">a</span><span class="p">),</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="n">Yr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="o">-</span><span class="n">yy</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">yy</span><span class="p">))[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<span class="n">Xr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Yr</span><span class="p">)</span>
+<span class="n">qx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">Yr</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">tsim</span><span class="p">)))</span>
+<span class="n">qy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">Yr</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">tsim</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">dQw</span><span class="p">,</span> <span class="n">change_date</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">regime</span><span class="p">[</span><span class="s1">&#39;dQw&#39;</span><span class="p">],</span> <span class="n">regime</span><span class="p">[</span><span class="s1">&#39;dates&#39;</span><span class="p">]):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">tsim</span><span class="p">[</span><span class="n">tsim</span> <span class="o">&gt;</span> <span class="n">change_date</span><span class="p">]</span> <span class="o">-</span> <span class="n">change_date</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">wells</span><span class="p">:</span>
+        <span class="n">well</span> <span class="o">=</span> <span class="n">wells</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">dx_</span><span class="p">,</span> <span class="n">dy_</span> <span class="o">=</span> <span class="n">Xr</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">Yr</span> <span class="o">-</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+        <span class="n">r2</span> <span class="o">=</span> <span class="n">dx_</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">dy_</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">r2</span> <span class="o">*</span> <span class="n">S</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">kD</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="c1"># (ny x nt)</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">well</span><span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">])</span> <span class="c1"># Make  sure the sign for the mirror well is reversed, its -dQw</span>
+        <span class="n">qx</span><span class="p">[:,</span> <span class="n">tsim</span> <span class="o">&gt;</span> <span class="n">change_date</span><span class="p">]</span> <span class="o">+=</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">dQw</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx_</span> <span class="o">/</span> <span class="n">r2</span>
+        <span class="n">qy</span><span class="p">[:,</span> <span class="n">tsim</span> <span class="o">&gt;</span> <span class="n">change_date</span><span class="p">]</span> <span class="o">+=</span> <span class="n">sign</span> <span class="o">*</span> <span class="n">dQw</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">u</span><span class="p">)</span> <span class="o">*</span> <span class="n">dy_</span> <span class="o">/</span> <span class="n">r2</span>
+<span class="n">Qx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">qx</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">qx</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Yr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Qy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">qy</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">qy</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">Yr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s2">&quot;Infiltration/exfiltration rates at change_dates [m/d]&quot;</span><span class="p">,</span> <span class="s2">&quot;infiltration/exfiltration rate [m/d&quot;</span><span class="p">,</span> <span class="s2">&quot;y [m]&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">change_date</span> <span class="ow">in</span> <span class="n">regime</span><span class="p">[</span><span class="s1">&#39;dates&#39;</span><span class="p">]:</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tsim</span> <span class="o">&lt;=</span> <span class="n">change_date</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">qx</span><span class="p">[:,</span> <span class="n">it</span><span class="p">],</span> <span class="n">Yr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">change_date</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">newfig</span><span class="p">(</span><span class="s2">&quot;Pumping regime and inflow into aquifer&quot;</span><span class="p">,</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;Q[m3/d&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tsim</span><span class="p">,</span> <span class="n">Qx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Qx [m3/d]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tsim</span><span class="p">,</span> <span class="n">Qy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Qy [m3/d]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">regime</span><span class="p">[</span><span class="s1">&#39;dates&#39;</span><span class="p">],</span> <span class="n">regime</span><span class="p">[</span><span class="s1">&#39;Qw&#39;</span><span class="p">],</span> <span class="n">where</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;regime&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2017_16_0.png" src="../_images/notebooks_AssJan2017_16_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_AssJan2017_16_1.png" src="../_images/notebooks_AssJan2017_16_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="Conclusion">
+<h2><span class="section-number">7.5. </span>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this headline"></a></h2>
+<p>By increasing the distance <span class="math notranslate nohighlight">\(L\)</span> between the well and the river, the infiltraion during summer can be fully prevented. You figure out which distance this is.</p>
+<p>The goal is fully achieved when the distance of the well from the river is 1500 of more.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="AssJan2019.html" class="btn btn-neutral float-left" title="6. Assignment Jan 2019. A building pit next to a river" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="AssJan2016.html" class="btn btn-neutral float-right" title="8. Assignment Jan 2016. Several exercises based on the syllabus" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Theo N. Olsthoorn.
+      <span class="lastupdated">Last updated on Jun 07, 2022.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
