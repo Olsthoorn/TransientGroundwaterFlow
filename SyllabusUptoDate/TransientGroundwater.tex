@@ -292,10 +292,109 @@ time varying systems by means of convolution.
 aspects they've learned.
 \end{itemize}
 
+\section{Exam}
+
+The exam is closed-book and will last one hour. It consists of solving
+several tasks and providing answers to questions concerning the text.
+Required formulas will be given.
+
+\section{Assignment}
+
+An assignment will be provided. It can be partially made in class
+during the exercises in the afternoons. I must have the results when
+I judge your written exams, that is, by the end of the week in which
+the written exam takes place, simply because I can't give marks without
+the assignments. Any assignments handed in thereafter will not be
+graded, which implies that the entire mark will be defined only by
+the results of the written exam.
+
+It is clear that I expect everyone to do his/her own assignments.
+It is generally easy for me to see who copied his or her work from
+someone else.
+
+\section{Gradiing}
+
+Grading will be 70\% for the exam, 30\% for the assignments.
+
+Answers given during the exam must show their motivation, that is,
+the rationale: I want to see what (mental) steps you make. So motivate
+each step with some clarifying words. Just numbers or incomprehensible
+formula derivations do not count!
+
+\section{What to learn / understand}
+\begin{enumerate}
+\item Sections \ref{chap:Introduction-to-transient} through \ref{sec:Elastic-Storage}.
+Check yourself by answering the questions. Skip section \ref{sec:Earth-tides}.
+\item Sections \ref{sec:Scope-5-1} through \ref{sec:Sinusoidal-fluctuations},
+to the extent that you understand and can answer the questions in
+section \ref{subsec:Questions-5-3-5}. 
+\item Sections \ref{subsec:Basins-of-half-infinite-lateral-extent} through
+\ref{subsec:Questions-5-4-2}. Understand how the erfc function works,
+understand that that the differential equation is a water balance,
+and understand what the parameters in the solution mean. Answer the
+questions in section \ref{subsec:Questions-5-4-2}.
+\item Skip section \ref{sec:Higher-level-solutions} and \ref{subsec:Questions-5-4-4};
+they may be useful as a future reference.
+\item Section \ref{subsec:Superposition-in-time-half-inf-aquifer}. Understand
+how superposition in time works, and how to apply it when the analytic
+solution is provided.
+\item Sections \ref{subsec:Introduction-5-5-1} through \ref{subsec:Questions-5-5-5}.
+Understand how superposition in space works. Answer the questions
+of section \ref{subsec:Questions-5-5-5}.
+\item Section \ref{sec:Symmetrical-drainage-from-charcteristic-time}. Understand
+what the formula in section \ref{subsec:Analytical-solution}means
+and how we cracked it down to a characteristic time for groundwater
+systems and to their halftime in section \ref{subsec:Long-term-drainage-behavior-drainage}.
+Check if you can answer the questions in section \ref{subsec:Questions-5-6-3}.
+\item Chapter \ref{chap:Transient-flow-to-wells}: transient flow to wells.
+\item Section \ref{sec:Introduction-6-1} and \ref{sec:Wells-and-well}:
+introduction to wells.
+\item Section \ref{sec:General-relation-between-well-solutions}, Theis:
+Relation between the transient and steady-state well solutions. The
+Theis solution and its approximation.
+\item It’s always good if you exercise to derive the basic differential
+equations (i.e. the physics) yourself. This is, in fact, a basic engineering
+skill as it specifies the physics of the problem. Realize that these
+partial differential equations are always water balances for an arbitrary,
+infinitesimally small portion of the aquifer.
+\item Section \ref{sec:Theis-and-Hantush-wells}: Understand the situation
+covered by the Theis and Hantush solutions. Understand the behavior
+of these solutions on double log and half log axes. Understand where
+the extracted water comes from in both cases. Understand that Theis
+is a special case of Hantush. Understand how the simplified Theis
+solution is derived and why its useful. Understand the radius of influence.
+Understand the discharge at distance in the Theis case and what it
+implies. What are type curves?
+\item Section \ref{sec:Pumping-test-analyses} Pumping tests: Understand
+the concept of a pumping test. The interpretation of a pumping test
+in the Theis situation using the simplified logarithmic approximation
+of the well function (the trick to always determined the transmissivity
+from the drawdown per log-cycle of time. The way to determine the
+storage coefficient using the simplified log-approximation of the
+Theis function and it is limitation (partial penetration, clogged
+pumping well when measuring when measuring level inside the pumping
+well).
+\item Understand the principle of the classic analysis of pumping tests
+in the Theis and Hantush situation using graphs and type curves on
+double logarithmic scales (or paper).
+\item Section \ref{sec:Partial-penetration-of-well-screens} Partial penetration
+of the well screen in the aquifer: Just understand what it is and
+what effect it has on the drawdown near the well. You an always use
+this section as a reference in the future. Only understand the mechanism,
+as you are likely to encounter it in practice.
+\item Chapter \ref{chap:Convolution} Convolution: Understand what convolution
+is. Convolution is extremely useful as it allows to simulate groundwater
+with simple formulas for arbitrarily varying input in an efficient
+and very general way. It can be seen as a smart form of superposition.
+\item Chapter \ref{chap:Laplace-solutions} Laplace solutions: Skip. May
+be used as a reference.
+\end{enumerate}
+
 \section{Note with respect to the exercises}
 
-Today, there are two skills that students should acquire: Python and
-QGIS.
+Nowadays, there are two skills that students should acquire to be
+able to do sound quantiative analysis like it is the case in this
+course: Python and QGIS. My motivation is as follows:
 
 With Python, there is no limit to what you as student of professional
 may compute (and visualize) on your laptop,. Neither is there any
@@ -367,7 +466,8 @@ See \url{https://www.dataone.org/sites/default/files/sites/all/documents/perez20
 
 Theo Olsthoorn, Dec. 2017/ Jan 2021/ May 2022
 
-\chapter{Introduction to transient phenomena in groundwater}
+\chapter{\label{chap:Introduction-to-transient}Introduction to transient
+phenomena in groundwater}
 
 Transient phenomena can only occur if there is some form of storage
 for water under pressure. Without storage, at least theoretically,
@@ -424,7 +524,8 @@ be important under specific circumstances, or may even be quite common.
 Therefore, we will start with an illustration of some forms of irreversible
 transient behavior of water-filled porous media.
 
-\chapter{Irreversible transient phenomena}
+\chapter{\label{chap:Irreversible-transient-phenomena}Irreversible transient
+phenomena}
 
 \section{Consolidation}
 
@@ -608,7 +709,8 @@ them are, and under which preconditions they occur.
 body that floats on salt water is irreversible?
 \end{enumerate}
 
-\chapter{Reversible groundwater storage}
+\chapter{\label{chap:Reversible-groundwater-storage}Reversible groundwater
+storage}
 
 In the remainder of this syllabus, we will restrict ourselves to reversible
 groundwater storage phenomena, i.e. phenomena in which the porous
@@ -1001,7 +1103,7 @@ and the straw is assumed to be zero?
 \end{enumerate}
 \pagebreak{}
 
-\section{Elastic Storage}
+\section{\label{sec:Elastic-Storage}Elastic Storage}
 
 \subsection{Introduction}
 
@@ -1559,7 +1661,7 @@ measuring point or to the thickness of the entire aquifer?
 of the piezometer to compute the storage coefficient of the aquifer?
 \end{enumerate}
 
-\section{Earth tides (not for exam)}
+\section{\label{sec:Earth-tides}Earth tides (not for exam)}
 
 Even far from the ocean and even after correcting for varying barometer
 pressures, the groundwater head in confined aquifers may show a response
@@ -1606,9 +1708,10 @@ A thorough analysis of earth tides is beyond the scope of this course.
 There is a wealth of literature on the subject; a good quantitative
 paper is \textcite{Kamp1983}.
 
-\chapter{One-dimensional transient groundwater flow}
+\chapter{\label{chap:One-dimensional-transient-flow}One-dimensional transient
+groundwater flow}
 
-\section{Scope}
+\section{\label{sec:Scope-5-1}Scope}
 
 In this course, we will deal with transient groundwater flow in one-dimensional
 and radial situations (wells) for which analytic solutions are available.
@@ -1774,7 +1877,8 @@ as only the derivatives of $s$ and $h$ play a role in the equation,
 which are the same. Just read $s$ as head difference relative to
 some initial or average condition.
 
-\section{Sinusoidal fluctuations of the groundwater head and flows}
+\section{\label{sec:Sinusoidal-fluctuations}Sinusoidal fluctuations of the
+groundwater head and flows}
 
 This section deals exclusively with sinusoidal fluctuations of groundwater
 heads and flows caused by a head of flow that fluctuates like a sine
@@ -2229,7 +2333,7 @@ of the partial differential equations offers many ways to analyze
 groundwater systems of the type we considered. By superposition, these
 analysis can also be combined with other features such as wells.
 
-\subsection{Questions}
+\subsection{\label{subsec:Questions-5-3-5}Questions}
 \begin{enumerate}
 \item Prove the correctness of the given solution yourself. As an extra
 exercise you could prove that equation \ref{eq:QfluctuationStage}
@@ -2307,7 +2411,8 @@ or unconfined aquifer. In this chapter, we'll discuss the same hydrological
 setting, but in which the surface water level changes suddenly by
 a fixed amount.
 
-\subsection{Basins of half-infinite lateral extent}
+\subsection{\label{subsec:Basins-of-half-infinite-lateral-extent}Basins of half-infinite
+lateral extent}
 
 Again, we consider a confined aquifer in direct contact with surface
 water as was done in the previous section. The situation is depicted
@@ -2498,7 +2603,7 @@ makes the horizontal axis proportional to time, as $1/u^{2}=\frac{4kD}{x^{2}S}t$
 Proof that equation \ref{eq:erfc-solution} fulfills the partial differential
 equation \ref{eq:diffusion-equation}.
 
-\subsection{Questions}
+\subsection{\label{subsec:Questions-5-4-2}Questions}
 \begin{enumerate}
 \item All drawdowns due to a sudden change of river stage are expressed
 in a simple erfc-function. Can you express the argument $u$ using
@@ -2722,7 +2827,7 @@ over time at different values of $x$}
 \end{figure}
 
 
-\subsection{Questions}
+\subsection{\label{subsec:Questions-5-4-4}Questions}
 \begin{enumerate}
 \item What is the mathematical expression for the head $s\left(x,t\right)$
 and the discharge $Q\left(x,t\right)$ for the case in which the river
@@ -2742,7 +2847,8 @@ then how much is the infiltration $Q\left(0,t\right)$ at the lake
 shore in 2021? By how much has it declined since 1991?
 \end{enumerate}
 
-\subsection{Superposition in time, half-infinite aquifer}
+\subsection{\label{subsec:Superposition-in-time-half-inf-aquifer}Superposition
+in time, half-infinite aquifer}
 
 Consider a half-infinite aquifer in direct connection with surface
 water at $x=0$. The analytical solution for the change of the groundwater
@@ -2823,7 +2929,7 @@ example}
 \section{Groundwater basins as land strips of limited width between straight
 head boundaries}
 
-\subsection{Introduction}
+\subsection{\label{subsec:Introduction-5-5-1}Introduction}
 
 In many practical situations, groundwater basins will have a limited
 width instead of $x$ extending to infinity. Examples are groundwater
@@ -3285,7 +3391,7 @@ $S=0.1$, $L=250$ m. Situation for several times.}
 \end{figure}
 
 
-\subsection{Questions}
+\subsection{\label{subsec:Questions-5-5-5}Questions}
 \begin{enumerate}
 \item Set up a mirror scheme for the case of a strip of land bounded by
 straight surface water on either side, where the surface water stage
@@ -3310,7 +3416,7 @@ sections, yet it provides the same result for the symmetrical case.
 The advantage of this form of the solution is that it can be further
 analyzed to deduce general drainage patterns and their time scale.
 
-\subsection{Analytical solution}
+\subsection{\label{subsec:Analytical-solution}Analytical solution}
 
 An analytical solution for the drainage of a strip of land that we
 solved by superimposing an infinite number of mirror ditches is also
@@ -3575,7 +3681,7 @@ Flower bulb fields & NL & 200 & 0.1 & 50 & 1.25 & 0.35 & 0.001 & 0.001\tabularne
 \end{table}
 
 
-\subsection{Questions}
+\subsection{\label{subsec:Questions-5-6-3}Questions}
 \begin{enumerate}
 \item Show on the hand of equation \ref{eq:Kraaijenoff-van-der-Leur-Verruijt}
 what the half-time of the drainage of this system is. Derive it yourself.
@@ -3593,9 +3699,9 @@ by implementing both in the same spreadsheet.
 in Python or Excel.
 \end{enumerate}
 
-\chapter{Transient flow to wells}
+\chapter{\label{chap:Transient-flow-to-wells}Transient flow to wells}
 
-\section{Introduction}
+\section{\label{sec:Introduction-6-1}Introduction}
 
 This chapter deals with the flow to wells in aquifers. The flow to
 a well is treated as axially symmetric and horizontal. Vertical resistance
@@ -3639,7 +3745,7 @@ a few lines if Python code are needed to implement and use the most
 important transient groundwater-flow solutions and apply superposition
 in time and or in space to handle more demanding situations.
 
-\section{Wells and well functions overview}
+\section{\label{sec:Wells-and-well}Wells and well functions overview}
 
 \begin{figure}
 \caption{\label{fig:Large-diameter-open-well-India}Large-diameter open well
@@ -3772,9 +3878,10 @@ analytically as well as numerically. They will be presented further
 down. However, the general relation between solutions for a water-table
 aquifer and a confined aquifer is presented first.
 
-\section{General relation between the well-induced head change in a water-table
-and confined aquifer and the relation between the different analytical
-solutions for drawdown by a fully penetrating pumping well}
+\section{\label{sec:General-relation-between-well-solutions}General relation
+between the well-induced head change in a water-table and confined
+aquifer and the relation between the different analytical solutions
+for drawdown by a fully penetrating pumping well}
 
 The transmissivity in a water-table aquifer is given by $T=kh$ where
 $h$ is the distance from the water table to the bottom of the aquifer;
@@ -3889,16 +3996,17 @@ Hantush (1955) & no & yes & no & $s=\frac{Q}{4\pi kD}\mbox{W}_{h}\left(u,\frac{r
 \end{table}
 
 
-\section{Theis and Hantush wells in an infinite aquifer with constant transmissivity
-and storativity; the governing partial differential equation}
+\section{\label{sec:Theis-and-Hantush-wells}Theis and Hantush wells in an
+infinite aquifer with constant transmissivity and storativity; the
+governing partial differential equation}
 
 \subsection{Introduction}
 
 In 1935, \textcite{TheisC1935} published a new solution for the dynamic
 change of head $s$ {[}m{]} caused by a well that, at $t=0$, begins
-pumping at a constant rate $Q$ {[}L $^{3}$/T{]} from an infinite
-aquifer having uniform transmissivity $kD$ {[}L $^{2}$/T{]} and
-storativity $S$ {[}-{]}.
+pumping at a constant rate $Q\,\mathrm{[L^{3}/T]}$ from an infinite
+aquifer having uniform transmissivity $kD\,\mathrm{[L^{2}/T]}$ and
+storativity $S\,\mathrm{[-]}$.
 
 The solution by Theis has been a major breakthrough in groundwater
 hydrology. For the first time, it became possible to analyze the dynamics
@@ -3921,18 +4029,18 @@ within a limited time. Both solutions are mathematically similar,
 in fact, the Theis solution is a special case of the more general
 Hantush solution; the Theis solution is the Hantush solution for the
 case that the vertical hydraulic resistance of the aquitard $c=\frac{d}{k'}$
-{[}T{]} (with $d$ {[}L{]} the thickness of the aquitard and $k'$
-{[}L/T{]} its effective vertical conductivity) is infinite. Note that
-the dimension of $c$ is {[}T{]}, i.e. time. The flow and drawdown
-caused by extracting from a well in an infinite aquifer must be axially
-symmetric. figure \ref{fig:pde_axial_flow_to_well} shows the general
-situation in cross section. A well with a well radius $r_{0}$ is
-extracting a constant flow $Q_{0}$ {[}L $^{3}$/T{]}. The aquifer
-is semi-confined; so there is exchange of water through the overlying
-aquitard with resistance $c$ {[}T{]} with water on top of that layer
-with a constant water level $h_{0}$. All water levels or heads are
-with respect to an arbitrary datum (reference elevation) as indicated.
-The leakage at any $t$ and $r$ equals $n=\frac{h_{0}-h_{r,t}}{c}$
+{[}T{]} (with $d\,\mathrm{[L]}$ the thickness of the aquitard and
+$k'\,\mathrm{[L/T]}$ its effective vertical conductivity) is infinite.
+Note that the dimension of $c$ is {[}T{]}, i.e. time. The flow and
+drawdown caused by extracting from a well in an infinite aquifer must
+be axially symmetric. figure \ref{fig:pde_axial_flow_to_well} shows
+the general situation in cross section. A well with a well radius
+$r_{0}$ is extracting a constant flow $Q_{0}\,\mathrm{[L^{3}/T]}$.
+The aquifer is semi-confined; so there is exchange of water through
+the overlying aquitard with resistance $c$ {[}T{]} with water on
+top of that layer with a constant water level $h_{0}$. All water
+levels or heads are with respect to an arbitrary datum (reference
+elevation) as indicated. The leakage at any $t$ and $r$ equals $n=\frac{h_{0}-h_{r,t}}{c}$
 {[}L/T{]}. The head in the aquifer is denoted by the curved lines.
 During the time step $dt$ the head increases from $h_{r,t}$ to $h_{r,t+dt}=h_{r,t}+\frac{\partial h_{r,t}}{dt}dt$.
 Please watch the signs. It is clear that when we extract water from
@@ -3942,7 +4050,8 @@ direction, the direction in which $r$ is positive and $h$ is positive.
 This facilitates somewhat the derivation, it only has an effect on
 where we will have minus signs.
 
-\subsection{The governing partial differential equation}
+\subsection{\label{subsec:The-governing-partial-wells}The governing partial
+differential equation}
 
 We start the derivation using small discrete values for the distance
 difference $\Delta r$ and the time step $\Delta t$, which later
@@ -4727,9 +4836,9 @@ Q_{r,t} & =2\pi kDr\frac{ds_{r,t}}{dt}\\
 which is straightforward using the numerical implementation of the
 Hantush well function.
 
-\section{Pumping-test analyses}
+\section{\label{sec:Pumping-test-analyses}Pumping-test analyses}
 
-\subsection{Introduction}
+\subsection{\label{subsec:Introduction-6-6-1}Introduction}
 
 A very important usage of the Theis and Hantush well function is the
 determination of the aquifer parameters from the drawdowns determined
@@ -4770,8 +4879,9 @@ of a 60 m thick aquifer with piezometers at two depths and 6 distances.}
 \end{figure}
 
 
-\subsection{Analysis of the pumping test in the Theis situation using the logarithmic
-approximation of the Theis well function}
+\subsection{\label{subsec:Analysis-Theis-log-approx}Analysis of the pumping
+test in the Theis situation using the logarithmic approximation of
+the Theis well function}
 
 The logarithmic approximation of the Theis well function that was
 derived in section \ref{subsec:Power-approximation-of-Theis-well-function}
@@ -5270,7 +5380,7 @@ thick red line in the top chart.}
 \end{figure}
 
 
-\subsection{Exercises}
+\subsection{\label{subsec:Exercises-6-5-4}Exercises}
 \begin{enumerate}
 \item The book \textcite{KrusemanG1994} describes a pumping test ``\emph{Oude
 Korendijk}'' and provides the data. Interpret that test.
@@ -5391,7 +5501,7 @@ If so, how will this impact grow over time? When will it reach its
 maximum? What will be the maximum impact of this extraction?
 \end{enumerate}
 
-\subsection{Superposition in time}
+\subsection{\label{subsec:Superposition-in-time}Superposition in time}
 
 We will illustrate superposition in time for the Theis situation,
 however, it works exactly the same for the Hantush case.
@@ -6473,7 +6583,7 @@ in the figure title.}
 \end{figure}
 
 
-\chapter{Convolution}
+\chapter{\label{chap:Convolution}Convolution}
 
 \section{What convolution is and how it works}
 
@@ -7233,7 +7343,8 @@ the Theis and Hantush well functions?
 of a system?
 \end{enumerate}
 
-\chapter{Laplace solutions (illustration, not for exam)}
+\chapter{\label{chap:Laplace-solutions}Laplace solutions (illustration, not
+for exam)}
 
 \section{Sudden head rise at the boundary of a one-dimensional semi-infinite
 aquifer}

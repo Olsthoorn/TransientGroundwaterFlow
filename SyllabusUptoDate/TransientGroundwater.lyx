@@ -901,11 +901,458 @@ Students will carry out an assignment in which they apply the various aspects
 \end_layout
 
 \begin_layout Section
+Exam
+\end_layout
+
+\begin_layout Standard
+The exam is closed-book and will last one hour.
+ It consists of solving several tasks and providing answers to questions
+ concerning the text.
+ Required formulas will be given.
+\end_layout
+
+\begin_layout Section
+Assignment
+\end_layout
+
+\begin_layout Standard
+An assignment will be provided.
+ It can be partially made in class during the exercises in the afternoons.
+ I must have the results when I judge your written exams, that is, by the
+ end of the week in which the written exam takes place, simply because I
+ can't give marks without the assignments.
+ Any assignments handed in thereafter will not be graded, which implies
+ that the entire mark will be defined only by the results of the written
+ exam.
+\end_layout
+
+\begin_layout Standard
+It is clear that I expect everyone to do his/her own assignments.
+ It is generally easy for me to see who copied his or her work from someone
+ else.
+\end_layout
+
+\begin_layout Section
+Gradiing
+\end_layout
+
+\begin_layout Standard
+Grading will be 70% for the exam, 30% for the assignments.
+\end_layout
+
+\begin_layout Standard
+Answers given during the exam must show their motivation, that is, the rationale
+: I want to see what (mental) steps you make.
+ So motivate each step with some clarifying words.
+ Just numbers or incomprehensible formula derivations do not count!
+\end_layout
+
+\begin_layout Section
+What to learn / understand
+\end_layout
+
+\begin_layout Enumerate
+Sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Introduction-to-transient"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Elastic-Storage"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Check yourself by answering the questions.
+ Skip section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Earth-tides"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Scope-5-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Sinusoidal-fluctuations"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, to the extent that you understand and can answer the questions in section
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Questions-5-3-5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Basins-of-half-infinite-lateral-extent"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Questions-5-4-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Understand how the erfc function works, understand that that the differential
+ equation is a water balance, and understand what the parameters in the
+ solution mean.
+ Answer the questions in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Questions-5-4-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Skip section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Higher-level-solutions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Questions-5-4-4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+; they may be useful as a future reference.
+\end_layout
+
+\begin_layout Enumerate
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Superposition-in-time-half-inf-aquifer"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Understand how superposition in time works, and how to apply it when the
+ analytic solution is provided.
+\end_layout
+
+\begin_layout Enumerate
+Sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Introduction-5-5-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ through 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Questions-5-5-5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Understand how superposition in space works.
+ Answer the questions of section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Questions-5-5-5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Symmetrical-drainage-from-charcteristic-time"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Understand what the formula in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Analytical-solution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+means and how we cracked it down to a characteristic time for groundwater
+ systems and to their halftime in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Long-term-drainage-behavior-drainage"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Check if you can answer the questions in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Questions-5-6-3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Transient-flow-to-wells"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: transient flow to wells.
+\end_layout
+
+\begin_layout Enumerate
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Introduction-6-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Wells-and-well"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: introduction to wells.
+\end_layout
+
+\begin_layout Enumerate
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:General-relation-between-well-solutions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, Theis: Relation between the transient and steady-state well solutions.
+ The Theis solution and its approximation.
+\end_layout
+
+\begin_layout Enumerate
+It’s always good if you exercise to derive the basic differential equations
+ (i.e.
+ the physics) yourself.
+ This is, in fact, a basic engineering skill as it specifies the physics
+ of the problem.
+ Realize that these partial differential equations are always water balances
+ for an arbitrary, infinitesimally small portion of the aquifer.
+\end_layout
+
+\begin_layout Enumerate
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Theis-and-Hantush-wells"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: Understand the situation covered by the Theis and Hantush solutions.
+ Understand the behavior of these solutions on double log and half log axes.
+ Understand where the extracted water comes from in both cases.
+ Understand that Theis is a special case of Hantush.
+ Understand how the simplified Theis solution is derived and why its useful.
+ Understand the radius of influence.
+ Understand the discharge at distance in the Theis case and what it implies.
+ What are type curves?
+\end_layout
+
+\begin_layout Enumerate
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Pumping-test-analyses"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ Pumping tests: Understand the concept of a pumping test.
+ The interpretation of a pumping test in the Theis situation using the simplifie
+d logarithmic approximation of the well function (the trick to always determined
+ the transmissivity from the drawdown per log-cycle of time.
+ The way to determine the storage coefficient using the simplified log-approxima
+tion of the Theis function and it is limitation (partial penetration, clogged
+ pumping well when measuring when measuring level inside the pumping well).
+\end_layout
+
+\begin_layout Enumerate
+Understand the principle of the classic analysis of pumping tests in the
+ Theis and Hantush situation using graphs and type curves on double logarithmic
+ scales (or paper).
+\end_layout
+
+\begin_layout Enumerate
+Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Partial-penetration-of-well-screens"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ Partial penetration of the well screen in the aquifer: Just understand
+ what it is and what effect it has on the drawdown near the well.
+ You an always use this section as a reference in the future.
+ Only understand the mechanism, as you are likely to encounter it in practice.
+\end_layout
+
+\begin_layout Enumerate
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Convolution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ Convolution: Understand what convolution is.
+ Convolution is extremely useful as it allows to simulate groundwater with
+ simple formulas for arbitrarily varying input in an efficient and very
+ general way.
+ It can be seen as a smart form of superposition.
+\end_layout
+
+\begin_layout Enumerate
+Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Laplace-solutions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ Laplace solutions: Skip.
+ May be used as a reference.
+\end_layout
+
+\begin_layout Section
 Note with respect to the exercises
 \end_layout
 
 \begin_layout Standard
-Today, there are two skills that students should acquire: Python and QGIS.
+Nowadays, there are two skills that students should acquire to be able to
+ do sound quantiative analysis like it is the case in this course: Python
+ and QGIS.
+ My motivation is as follows:
 \end_layout
 
 \begin_layout Standard
@@ -1089,6 +1536,12 @@ Theo Olsthoorn, Dec.
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Introduction-to-transient"
+
+\end_inset
+
 Introduction to transient phenomena in groundwater
 \end_layout
 
@@ -1285,6 +1738,12 @@ Dynamics of groundwater may also be divided into
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Irreversible-transient-phenomena"
+
+\end_inset
+
 Irreversible transient phenomena
 \end_layout
 
@@ -1760,6 +2219,12 @@ Why would one argue that extraction of fresh water from a freshwater body
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Reversible-groundwater-storage"
+
+\end_inset
+
 Reversible groundwater storage
 \end_layout
 
@@ -3010,6 +3475,12 @@ Given a grain diameter of 0.2 mm, a radius that is 1/7th of this radius,
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Elastic-Storage"
+
+\end_inset
+
 Elastic Storage
 \end_layout
 
@@ -4690,6 +5161,12 @@ How useful is it to measure local porosity at the screen position of the
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Earth-tides"
+
+\end_inset
+
 Earth tides (not for exam)
 \end_layout
 
@@ -4851,10 +5328,22 @@ literal "false"
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:One-dimensional-transient-flow"
+
+\end_inset
+
 One-dimensional transient groundwater flow
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Scope-5-1"
+
+\end_inset
+
 Scope
 \end_layout
 
@@ -5308,6 +5797,12 @@ Finally notice that we can replace the head change
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Sinusoidal-fluctuations"
+
+\end_inset
+
 Sinusoidal fluctuations of the groundwater head and flows
 \end_layout
 
@@ -6706,6 +7201,12 @@ More complicated inputs can be constructed as a sum of a number of sin (or
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Questions-5-3-5"
+
+\end_inset
+
 Questions
 \end_layout
 
@@ -6996,6 +7497,12 @@ In the previous section, we discussed the effect of sinusoidal variation
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Basins-of-half-infinite-lateral-extent"
+
+\end_inset
+
 Basins of half-infinite lateral extent
 \end_layout
 
@@ -7776,6 +8283,12 @@ reference "eq:diffusion-equation"
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Questions-5-4-2"
+
+\end_inset
+
 Questions
 \end_layout
 
@@ -8617,6 +9130,12 @@ Lake Nasser example, simulated using the solution for a sudden change and
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Questions-5-4-4"
+
+\end_inset
+
 Questions
 \end_layout
 
@@ -8672,6 +9191,12 @@ When, after 1991, the water level has been more or less constant, then how
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Superposition-in-time-half-inf-aquifer"
+
+\end_inset
+
 Superposition in time, half-infinite aquifer
 \end_layout
 
@@ -8974,6 +9499,12 @@ Groundwater basins as land strips of limited width between straight head
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Introduction-5-5-1"
+
+\end_inset
+
 Introduction
 \end_layout
 
@@ -10536,6 +11067,12 @@ Top: head.
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Questions-5-5-5"
+
+\end_inset
+
 Questions
 \end_layout
 
@@ -10591,6 +11128,12 @@ Here we introduce a solution for the drainage of a land strip that initially
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Analytical-solution"
+
+\end_inset
+
 Analytical solution
 \end_layout
 
@@ -12018,6 +12561,12 @@ NL
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Questions-5-6-3"
+
+\end_inset
+
 Questions
 \end_layout
 
@@ -12102,10 +12651,22 @@ reference "eq:sSuddenRiseOnBothSides"
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Transient-flow-to-wells"
+
+\end_inset
+
 Transient flow to wells
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Introduction-6-1"
+
+\end_inset
+
 Introduction
 \end_layout
 
@@ -12200,6 +12761,12 @@ tion in time and or in space to handle more demanding situations.
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Wells-and-well"
+
+\end_inset
+
 Wells and well functions overview
 \end_layout
 
@@ -12677,6 +13244,12 @@ Governing partial differential equations are important as they express the
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:General-relation-between-well-solutions"
+
+\end_inset
+
 General relation between the well-induced head change in a water-table and
  confined aquifer and the relation between the different analytical solutions
  for drawdown by a fully penetrating pumping well
@@ -13253,6 +13826,12 @@ no
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Theis-and-Hantush-wells"
+
+\end_inset
+
 Theis and Hantush wells in an infinite aquifer with constant transmissivity
  and storativity; the governing partial differential equation
 \end_layout
@@ -13425,6 +14004,12 @@ noprefix "false"
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:The-governing-partial-wells"
+
+\end_inset
+
 The governing partial differential equation
 \end_layout
 
@@ -16013,10 +16598,22 @@ which is straightforward using the numerical implementation of the Hantush
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Pumping-test-analyses"
+
+\end_inset
+
 Pumping-test analyses
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Introduction-6-6-1"
+
+\end_inset
+
 Introduction
 \end_layout
 
@@ -16117,6 +16714,12 @@ Situation of the pumping test.
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Analysis-Theis-log-approx"
+
+\end_inset
+
 Analysis of the pumping test in the Theis situation using the logarithmic
  approximation of the Theis well function
 \end_layout
@@ -17683,6 +18286,12 @@ Top: The measured and computed Theis drawdowns as a function of
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Exercises-6-5-4"
+
+\end_inset
+
 Exercises
 \end_layout
 
@@ -18067,6 +18676,12 @@ In the Mid-West of the United States, rights for water extraction from a
 \end_layout
 
 \begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Superposition-in-time"
+
+\end_inset
+
 Superposition in time
 \end_layout
 
@@ -22662,6 +23277,12 @@ Example of drawdown in large-diameter well.
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Convolution"
+
+\end_inset
+
 Convolution
 \end_layout
 
@@ -25392,6 +26013,12 @@ How can you compute the block response
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Laplace-solutions"
+
+\end_inset
+
 Laplace solutions (illustration, not for exam)
 \end_layout
 
